@@ -18,7 +18,7 @@ public class login extends HttpServlet {
         request.setAttribute("password", request.getParameter("password"));
 
         request.getRequestDispatcher("/welcome.jsp").forward(request,response);
-        //test..
+        
 
 
     }
