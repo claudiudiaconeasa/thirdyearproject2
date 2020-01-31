@@ -10,26 +10,32 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
+
+<%--    <meta name="description" content="">--%>
+<%--    <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">--%>
 
     <title>Engaging History Tools for Students!</title>
-    <%--BootStrap--%>
+    <%--BootStrap from Magister--%>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="template/css/magister.css">
+    <%--Bootstrap fonts--%>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+    <%-- Css--%>
+    <link rel="stylesheet" href="template/css/magister.css">
+
 </head>
 
+
 <body class="theme-invert">
+
+<%--Navigator for each separate section--%>
     <nav class="mainmenu">
         <div class="container">
             <div class = "dropdown">
                 <button type = "button" class = "navbar-toggle" data-toggle="dropdown">
                     <span class="icon-bar">
                         <span class="icon-bar">
-                            <span class ="icon-bar">
-                            </span>
+                            <span class ="icon-bar"></span>
                         </span>
                     </span>
                 </button>
@@ -51,6 +57,7 @@
         </div>
     </nav>
 
+<%--Main description on HomePage - Home section--%>
 <section class ="section" id="head">
     <div class ="container">
         <div class="row">
@@ -73,7 +80,8 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="template/js/modernizr.custom.72241.js"></script>
-    <!-- Custom template scripts -->
+
+    <!-- Magister bootstrap template used -->
     <script src="template/js/magister.js"></script>
 </body>
 </html>

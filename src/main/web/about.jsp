@@ -14,14 +14,18 @@
     <meta name="author" content="Sergey Pozhilov (GetTemplate.com)">
 
     <title>About the project</title>
-    <%--BootStrap--%>
+    <%--BootStrap from Magister--%>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="template/css/magister.css">
+    <%--Bootstrap fonts--%>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+    <%-- Css--%>
+    <link rel="stylesheet" href="template/css/magister.css">
 </head>
+
 <body class="theme-invert">
 
+<%--Additional information about the aim of the project - About section--%>
 <section class="section" id="about">
     <div class="container">
 
