@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="description" content="">
 
     <title>TimeMap</title>
@@ -26,7 +26,7 @@
 
         <h2 class="text-center title">Chronology of Events</h2>
         <div class="row">
-            <iframe src="https://timemapper.okfnlabs.org/anon/ej8exo-third-year-project?fbclid=IwAR1aq46YC4jpdM79kbGv-r4Ua-4R8xxpG0pFrGzDsJt1vkPW22HDnMXZKT8?embed=1" frameborder="0" style="border: none;" width="150%" height="820;"></iframe>
+            <iframe src="https://timemapper.okfnlabs.org/anon/ej8exo-third-year-project?fbclid=IwAR1aq46YC4jpdM79kbGv-r4Ua-4R8xxpG0pFrGzDsJt1vkPW22HDnMXZKT8?embed=1" scrolling ="no" frameborder="0" style="border: none; position:absolute;" width="75%" height="70%"></iframe>
         </div>
     </div>
 </section>
