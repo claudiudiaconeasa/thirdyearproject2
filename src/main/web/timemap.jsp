@@ -26,7 +26,7 @@
 
         <h2 class="text-center title">Chronology of Events</h2>
         <div class="row">
-            <iframe src="https://timemapper.okfnlabs.org/anon/ej8exo-third-year-project?fbclid=IwAR1aq46YC4jpdM79kbGv-r4Ua-4R8xxpG0pFrGzDsJt1vkPW22HDnMXZKT8?embed=1" scrolling ="no" frameborder="0" style="border: none; position:absolute;" width="75%" height="70%"></iframe>
+            <iframe src="https://timemapper.okfnlabs.org/anon/hbz420-third-year-project?embed=1" scrolling ="no" frameborder="0" style="border: none; position:absolute;" width="75%" height="70%"></iframe>
         </div>
     </div>
 </section>
