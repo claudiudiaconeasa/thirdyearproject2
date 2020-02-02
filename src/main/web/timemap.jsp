@@ -24,7 +24,7 @@
 <section class="section" id="contact">
     <div class="container">
 
-        <h2 class="text-center title">About Engaging History Tools</h2>
+        <h2 class="text-center title">Chronology of Events</h2>
         <div class="row">
             <iframe src="https://timemapper.okfnlabs.org/anon/ej8exo-third-year-project?fbclid=IwAR1aq46YC4jpdM79kbGv-r4Ua-4R8xxpG0pFrGzDsJt1vkPW22HDnMXZKT8?embed=1" frameborder="0" style="border: none;" width="150%" height="820;"></iframe>
         </div>

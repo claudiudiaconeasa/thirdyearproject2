@@ -63,9 +63,9 @@
         <div class="row">
             <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
                 <h1 class="title">Engaging History Tools</h1>
-                <h2 class ="subtitle">  This is aimed at all students to find out more about the history of their institution!</h2>
+                <h2 class ="subtitle"> Aimed at all students in order to find out more about History Facts inside their academic institution!</h2>
                 <h3 class="tagline">
-                    Start your journey to learn more about your academic institution and all great events in your surrounding City
+                    Start your journey by learning more about the past your University has been through and all great events in your surrounding City!
                 </h3>
 
             </div>
