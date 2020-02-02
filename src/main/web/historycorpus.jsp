@@ -30,9 +30,9 @@
 
 <%--John Rylands Library--%>
     <div class="container">
-        <h2 class="text-center title">History Corpus</h2>
+        <h2 class="text-center title">History Corpus</h2
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-2">
+            <div class="col-sm-6">
                 <div class="thumbnail">
                     <img src="template/images/johnrylands.jpg" alt="">
                     <div class="caption">
@@ -44,12 +44,10 @@
                     </div>
                 </div>
             </div>
-
-
+<%--            <div class="w-100"></div>--%>
 
 <%--WhitWorthHall--%>
-
-            <div class="col-sm-4">
+            <div class="col-sm-6">
                 <div class="thumbnail">
                     <img src="template/images/johnrylands.jpg" alt="">
                     <div class="caption">
@@ -61,8 +59,23 @@
                     </div>
                 </div>
             </div>
+        </div>
 <%--Another topic--%>
-            <div class="col-sm-4 col-sm-offset-2">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="thumbnail">
+                    <img src="template/images/johnrylands.jpg" alt="">
+                    <div class="caption">
+                        <h1>Whitworth Hall</h1>
+                        <p>Opened by Prince Charles, Whitworth Hall on Oxford Road and Burlington Street in Chorlton-on-Medlock, Manchester, England, is part of the University of Manchester</p>
+                        <form action ="WhitworthHall" method ="post">
+                            <button name="more" value="More" class="btn btn-default">More</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
                 <div class="thumbnail">
                     <img src="template/images/johnrylands.jpg" alt="">
                     <div class="caption">
