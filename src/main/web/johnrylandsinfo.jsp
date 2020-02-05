@@ -11,27 +11,35 @@
 
 <%
     Connection connection = null;
-    Statement statement = null;
+    PreparedStatement statement = null;
+    PreparedStatement statementTitle = null;
 
     ResultSet resultSet = null;
+    ResultSet resultSetTitle = null;
 
         Class.forName("com.mysql.jdbc.Driver").newInstance();
 
         String id = request.getParameter("id");
         String description = request.getParameter("description");
+        String title = request.getParameter("title");
 
         String connectionUrl = "jdbc:mysql://localhost:3306/";
         String connectionUser = "root";
         String connectionPass = "root";
 
         connection = DriverManager.getConnection(connectionUrl,connectionUser,connectionPass);
-        statement = connection.createStatement();
 
         String sql = "SELECT description FROM thirdyearproject.historycorpus where id = 1";
+        statement = connection.prepareStatement(sql);
+
+        String sqlTitle =  "SELECT title FROM thirdyearproject.historycorpus where id = 1";
+        statementTitle = connection.prepareStatement(sqlTitle);
+
 
         resultSet = statement.executeQuery(sql);
+        resultSetTitle = statementTitle.executeQuery(sqlTitle);
 
-        while(resultSet.next()) {
+        while(resultSet.next() && resultSetTitle.next()) {
 
 %>
 
@@ -55,7 +63,7 @@
     <div class="row">
         <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
 
-            <h1 class="title">The John Rylands Library</h1>
+            <h1 class="title"><%=resultSetTitle.getString("title")%></h1>
             <h3 class="tagline"> <%=resultSet.getString("description")%>
             </h3>
         </div>
