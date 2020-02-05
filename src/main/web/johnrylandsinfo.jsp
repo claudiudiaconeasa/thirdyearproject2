@@ -64,8 +64,10 @@
         <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
 
             <h1 class="title"><%=resultSetTitle.getString("title")%></h1>
-            <h3 class="tagline"> <%=resultSet.getString("description")%>
+            <h3 class="tagline" style="text-align: left"> <%=resultSet.getString("description")%>
             </h3>
+
+            <a href="https://en.wikipedia.org/wiki/John_Rylands_Library">More information available from the following source</a>
         </div>
     </div>
 </div>
