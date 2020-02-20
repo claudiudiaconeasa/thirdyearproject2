@@ -55,8 +55,10 @@
     <link rel="stylesheet" href="template/css/magister.css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
-</head>
+    <%--My Css--%>
+    <link rel="stylesheet" href="template/css/mycss.css">
 
+</head>
 
 <body class="theme-invert">
 <div class ="container">
@@ -64,10 +66,9 @@
         <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
 
             <h1 class="title"><%=resultSetTitle.getString("title")%></h1>
-            <h3 class="tagline" style="text-align: left"> <%=resultSet.getString("description")%>
+            <h3 class="tagline" style="text-align: justify"> <%=resultSet.getString("description")%>
             </h3>
-
-            <a href="https://en.wikipedia.org/wiki/John_Rylands_Library">More information available from the following source</a>
+                <a class ="mylink" href="https://en.wikipedia.org/wiki/John_Rylands_Library">More information available from the following source</a>
         </div>
     </div>
 </div>

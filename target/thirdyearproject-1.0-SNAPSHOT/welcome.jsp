@@ -68,6 +68,17 @@
                     Start your journey by learning more about the past your University has been through and all great events in your surrounding City!
                 </h3>
 
+                <div class="card w-90" style ="text-align: center">
+                    <div class="card-body">
+                        <h5 class="card-title">About</h5>
+                        <p class="card-text">Find out what all this project is about in the following section</p>
+                        <form action ="About" method ="post">
+                            <button name="more" value="More" class="btn btn-default">More</button>
+                        </form>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>

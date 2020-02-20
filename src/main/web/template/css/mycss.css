@@ -1,0 +1,24 @@
+.mylink{
+    display: block;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    border: 3px solid black;
+}
+
+.mylink::after{
+    content: "";
+    background: white;
+    opacity: 0.3;
+    width: calc(100% + 20px);
+    height: 0;
+    position: absolute;
+    bottom: -4px;
+    left: -10px;
+    transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.mylink:hover::after{
+    height: calc(100% + 8px)
+}
