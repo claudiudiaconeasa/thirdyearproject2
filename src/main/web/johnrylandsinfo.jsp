@@ -23,16 +23,16 @@
         String description = request.getParameter("description");
         String title = request.getParameter("title");
 
-        String connectionUrl = "jdbc:mysql://localhost:3306/";
-        String connectionUser = "root";
-        String connectionPass = "root";
+        String connectionUrl = "jdbc:mysql://e7qyahb3d90mletd.chr7pe7iynqr.eu-west-1.rds.amazonaws.com:3306/xgzx038it07d2zer";
+        String connectionUser =  "hmp0dynvunwbmue5";
+        String connectionPass = "jtiygydzn3h6f57k";
 
         connection = DriverManager.getConnection(connectionUrl,connectionUser,connectionPass);
 
-        String sql = "SELECT description FROM thirdyearproject.historycorpus where id = 1";
+        String sql = "SELECT description FROM xgzx038it07d2zer.historycorpus where id = 2";
         statement = connection.prepareStatement(sql);
 
-        String sqlTitle =  "SELECT title FROM thirdyearproject.historycorpus where id = 1";
+        String sqlTitle =  "SELECT title FROM xgzx038it07d2zer.historycorpus where id = 2";
         statementTitle = connection.prepareStatement(sqlTitle);
 
 
