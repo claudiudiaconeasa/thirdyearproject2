@@ -29,10 +29,10 @@
 
     connection = DriverManager.getConnection(connectionUrl,connectionUser,connectionPass);
 
-    String sql = "SELECT description FROM xgzx038it07d2zer.historycorpus where id = 2";
+    String sql = "SELECT description FROM xgzx038it07d2zer.historycorpus where id = 1";
     statement = connection.prepareStatement(sql);
 
-    String sqlTitle =  "SELECT title FROM xgzx038it07d2zer.historycorpus where id = 2";
+    String sqlTitle =  "SELECT title FROM xgzx038it07d2zer.historycorpus where id = 1";
     statementTitle = connection.prepareStatement(sqlTitle);
 
 
