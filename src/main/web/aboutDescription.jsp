@@ -11,11 +11,24 @@
 
 <%
     Connection connection = null;
-    PreparedStatement statement = null;
-    PreparedStatement statementTitle = null;
 
-    ResultSet resultSet = null;
-    ResultSet resultSetTitle = null;
+    PreparedStatement statementTimeMap = null;
+    PreparedStatement statementTitleTimeMap = null;
+
+    PreparedStatement statementUtility = null;
+    PreparedStatement statementTitleUtility = null;
+
+    PreparedStatement statementCalendar = null;
+    PreparedStatement statementTitleCalendar= null;
+
+    ResultSet resultSetTimeMap = null;
+    ResultSet resultSetTitleTimeMap = null;
+
+    ResultSet resultSetUtility = null;
+    ResultSet resultSetTitleUtility = null;
+
+    ResultSet resultSetCalendar = null;
+    ResultSet resultSetTitleCalendar = null;
 
     Class.forName("com.mysql.jdbc.Driver").newInstance();
 
@@ -29,17 +42,34 @@
 
     connection = DriverManager.getConnection(connectionUrl,connectionUser,connectionPass);
 
-    String sql = "SELECT description FROM xgzx038it07d2zer.historycorpus where id = 1";
-    statement = connection.prepareStatement(sql);
+    String sqlTimeMap = "SELECT description FROM xgzx038it07d2zer.historycorpus where id = 2";
+    statementTimeMap = connection.prepareStatement(sqlTimeMap);
 
-    String sqlTitle =  "SELECT title FROM xgzx038it07d2zer.historycorpus where id = 1";
-    statementTitle = connection.prepareStatement(sqlTitle);
+    String sqlTitleTimeMap =  "SELECT title FROM xgzx038it07d2zer.historycorpus where id = 2";
+    statementTitleTimeMap = connection.prepareStatement(sqlTitleTimeMap);
 
+    String sqlUtility = "SELECT description FROM xgzx038it07d2zer.historycorpus where id = 3";
+    statementUtility = connection.prepareStatement(sqlUtility);
 
-    resultSet = statement.executeQuery(sql);
-    resultSetTitle = statementTitle.executeQuery(sqlTitle);
+    String sqlTitleUtility =  "SELECT title FROM xgzx038it07d2zer.historycorpus where id = 3";
+    statementTitleUtility = connection.prepareStatement(sqlTitleUtility);
 
-    while(resultSet.next() && resultSetTitle.next()) {
+    String sqlCalendar = "SELECT description FROM xgzx038it07d2zer.historycorpus where id = 4";
+    statementCalendar = connection.prepareStatement(sqlCalendar);
+
+    String sqlTitleCalendar =  "SELECT title FROM xgzx038it07d2zer.historycorpus where id = 4";
+    statementTitleCalendar = connection.prepareStatement(sqlTitleCalendar);
+
+    resultSetTimeMap = statementTimeMap.executeQuery(sqlTimeMap);
+    resultSetTitleTimeMap = statementTitleTimeMap.executeQuery(sqlTitleTimeMap);
+
+    resultSetUtility = statementUtility.executeQuery(sqlUtility);
+    resultSetTitleUtility = statementTitleUtility.executeQuery(sqlTitleUtility);
+
+    resultSetCalendar = statementCalendar.executeQuery(sqlCalendar);
+    resultSetTitleCalendar = statementTitleCalendar.executeQuery(sqlTitleCalendar);
+
+    while(resultSetTimeMap.next() && resultSetTitleTimeMap.next() && resultSetUtility.next() && resultSetTitleUtility.next() && resultSetCalendar.next() && resultSetTitleCalendar.next()) {
 
 %>
 
@@ -49,7 +79,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
 
-    <title>John Rylands Library</title>
+    <title>About</title>
     <%--BootStrap--%>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="template/css/magister.css">
@@ -64,31 +94,30 @@
 
 </head>
 
-<body style="background-image: url('template/images/body4.jpg');">
+<body style="background-color:#3F729B;">
 <div class="container">
     <h2>About</h2>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
+
             <div class="item active">
+                <img src="template/images/timemap.jpg" alt="Time Map" style="width:100%;">
+                <h5><strong><%=resultSetTitleTimeMap.getString("title")%><br></strong></h5>
+                <p style="font-size: 50px"><%=resultSetTimeMap.getString("description")%></p>
+            </div>
+
+            <div class="item">
                 <img src="template/images/university.jpg" alt="Univeristy place" style="width:100%;">
-                <h5><strong>What's the utility of this project?<br></strong></h5>
-                <p style="font-size: 30px">Students across all academic years will get the chance to explore in depth about the University they're studying at and the City of Manchester in terms of the cultural past events.</p>
+                <h5><strong><%=resultSetTitleUtility.getString("title")%><br></strong></h5>
+                <p style="font-size: 50px"><%=resultSetUtility.getString("description")%></p>
             </div>
 
             <div class="item">
-                <img src="template/images/body2.jpg" alt="Chicago" style="width:100%;">
-            </div>
-
-            <div class="item">
-                <img src="template/images/body1.jpg" alt="New york" style="width:100%;">
+                <img src="template/images/calendar.jpg" alt="Calendar" style="width:100%;">
+                <h5><strong><%=resultSetTitleCalendar.getString("title")%><br></strong></h5>
+                <p style="font-size: 50px"><%=resultSetCalendar.getString("description")%></p>
             </div>
         </div>
 

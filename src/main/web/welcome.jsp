@@ -20,8 +20,10 @@
     <%--Bootstrap fonts--%>
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+
     <%-- Css--%>
     <link rel="stylesheet" href="template/css/magister.css">
+    <link rel="stylesheet" href="template/css/mycss.css">
 
 </head>
 
@@ -50,7 +52,7 @@
                         <a href="#themes">History Corpus</a>
                     </li>
                     <li>
-                        <a href="#about">About</a>
+                        <a href="#about">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -62,29 +64,40 @@
     <div class ="container">
         <div class="row">
             <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
-                <h1 class="title">Engaging History Tools</h1>
-                <h2 class ="subtitle"> Aimed at all students in order to find out more about History Facts inside their academic institution!</h2>
-                <h3 class="tagline">
-                    Start your journey by learning more about the past your University has been through and all great events in your surrounding City!
-                </h3>
+<%--                <h1 class="title">Engaging History Tools</h1>--%>
+<%--                <h2 class ="subtitle"> Aimed at all students in order to find out more about History Facts inside their academic institution!</h2>--%>
+<%--                <h3 class="tagline">--%>
+<%--                    Start your journey by learning more about the past your University has been through and all great events in your surrounding City!--%>
+<%--                </h3>--%>
 
-                <div class="card w-90" style ="text-align: center">
-                    <div class="card-body">
-                        <h5 class="card-title">About</h5>
-                        <p class="card-text">Find out what all this project is about in the following section</p>
-                        <form action ="About" method ="post">
-                            <button name="more" value="More" class="btn btn-default">More</button>
-                        </form>
-                    </div>
+<%--                <div class="card w-90" style ="text-align: center">--%>
+<%--                    <div class="card-body">--%>
+<%--                        <h5 class="card-title">About</h5>--%>
+<%--                        <p class="card-text">Find out what all this project is about in the following section</p>--%>
+<%--                        <form action ="About" method ="post">--%>
+<%--                            <button name="more" value="More" class="btn btn-default">More</button>--%>
+<%--                        </form>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+                <div class="jumbotron" style="background-color:#007E33; position:relative; top:100px;">
+                    <h1 class="display-4">Engaging History Tools</h1>
+                    <p class="lead">Aimed at all students in order to find out more about History Facts inside their academic institution!</p>
+                    <hr class="my-4">
+                    <p>Start your journey by learning more about the past your University has been through and all great events in your surrounding City!</p>
+                    <p class="lead">
+<%--                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>--%>
+                    <form action ="About" method ="post">
+                        <button name="more" value="More" class="btn btn-primary btn-lg"  data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">About</button>
+
+                    </form>
+                    </p>
                 </div>
-
-
             </div>
         </div>
     </div>
 </section>
 
-    <jsp:include page="about.jsp"></jsp:include>
+    <jsp:include page="contact.jsp"></jsp:include>
     <jsp:include page="timemap.jsp"></jsp:include>
     <jsp:include page="historycorpus.jsp"></jsp:include>
 

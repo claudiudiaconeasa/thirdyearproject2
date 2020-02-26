@@ -6,14 +6,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+//Redirect to about section with presentation as slides
 @WebServlet(name = "About")
 public class About extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/aboutDescription.jsp").forward(request,response);
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-    }
+        request.getRequestDispatcher("/aboutDescription.jsp").forward(request,response); }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { }
 }
