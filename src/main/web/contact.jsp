@@ -38,7 +38,8 @@
 </head>
 
 <body class="theme-invert">
-<section id="contact">
+<section class="section" id="about">
+    <section id="contactSection">
 
     <div class="section-content">
         <h1 class="section-header"><span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s">Contact</span></h1>
@@ -77,7 +78,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for ="description"> Message</label>
-                <textarea  rows="7" cols="7" class="form-control" id="description" placeholder="Enter Your Message"></textarea>
+                <textarea  rows="15" cols="10" class="form-control" id="description" placeholder="Enter Your Message"></textarea>
             </div>
             <div>
 
@@ -90,6 +91,7 @@
 
     </div>
     </div>
+</section>
 </section>
 
 </body>
