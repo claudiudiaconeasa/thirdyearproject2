@@ -49,7 +49,7 @@
                         <a href="#contact">TimeMap</a>
                     </li>
                     <li>
-                        <a href="#themes">History Corpus</a>
+                        <a href="#themes">Generate</a>
                     </li>
                     <li>
                         <a href="#about">Contact</a>

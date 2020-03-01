@@ -32,36 +32,19 @@
     <div class="container">
         <h2 style ="text-align:center">Generate your own TimeMap based on a .csv file upload</h2>
         <br>
-
-<%--        <div class="card w-90" style ="text-align: center">--%>
-<%--            <div class="card-body">--%>
-<%--                <h5 class="card-title">John Rylands Library</h5>--%>
-<%--                <p class="card-text">John Rylands Library was opened in 1920...</p>--%>
-<%--                <form action ="JohnRylands" method ="post">--%>
-<%--                    <button name="more" value="More" class="btn btn-default">More</button>--%>
-<%--                </form>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--        <br>--%>
         <div class="jumbotron" style="background-color:#007E33; position:relative; top:100px;">
         <div class="card w-90" style ="text-align:center;">
             <div class="card-body">
-<%--                <h5 class="card-title">Generate</h5>--%>
-<%--                <p class="card-text">Generate your own TimeMap based on a .csv file upload</p>--%>
-                <form action ="Generator" method ="POST" enctype="multipart/form-data">
+                <form action ="Uploader" method ="post" enctype="multipart/form-data">
                     <input style="position:relative; left:330px;" type="file" name="file" /><br>
                     Destination: <input type ="text" value="/tmp" name="destination";/> <br><br>
                     <input class ="btn btn-default" type ="submit" value="Upload" name ="upload" id="upload"/>
-<%--                <button name="more" value="More" class="btn btn-default">More</button>--%>
                 </form>
             </div>
         </div>
         </div>
         <br>
-
     </div>
-
 </section>
-
 </body>
 </html>

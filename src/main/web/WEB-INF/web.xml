@@ -19,6 +19,17 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>Uploader</servlet-name>
+        <servlet-class>Uploader</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Uploader</servlet-name>
+        <url-pattern>/Uploader</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
         <servlet-name>WhitworthHall</servlet-name>
         <servlet-class>WhitworthHall</servlet-class>
     </servlet>
