@@ -99,7 +99,7 @@
 
 
     <jsp:include page="timemap.jsp"></jsp:include>
-    <jsp:include page="historycorpus.jsp"></jsp:include>
+    <jsp:include page="generate.jsp"></jsp:include>
     <jsp:include page="contact.jsp"></jsp:include>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

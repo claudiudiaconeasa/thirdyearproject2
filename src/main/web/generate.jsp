@@ -37,7 +37,7 @@
             <div class="card-body">
                 <form action ="Uploader" method ="post" enctype="multipart/form-data">
                     <input style="position:relative; left:330px;" type="file" name="file" /><br>
-                    Destination: <input type ="text" value="/tmp" name="destination";/> <br><br>
+                    Destination: <input type ="text" value="/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/images" name="destination";/> <br><br>
                     <input class ="btn btn-default" type ="submit" value="Upload" name ="upload" id="upload"/>
                 </form>
             </div>
