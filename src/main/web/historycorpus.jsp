@@ -12,48 +12,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
 
-    <title>History Corpus</title>
+    <meta http-equiv="Content-Type" content="text/html: charset=UTF-8">
+
+    <title>Generate</title>
+
     <%--BootStrap from Magister--%>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <%--Bootstrap fonts--%>
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
-    <%-- Css--%>
+    <%--Css from Magister--%>
     <link rel="stylesheet" href="template/css/magister.css">
-
+    <%--My css--%>
+    <link rel ="stylesheet" href="template/css/mycss.css"
 </head>
 
 <body class="theme-invert">
-
-<%--Each article presented from the TimeMap - Corpus section--%>
 <section class="section" id="themes">
-
-<%--John Rylands Library--%>
     <div class="container">
-        <h2 style ="text-align:center">History Corpus</h2>
+        <h2 style ="text-align:center">Generate your own TimeMap based on a .csv file upload</h2>
         <br>
 
-        <div class="card w-90" style ="text-align: center">
+<%--        <div class="card w-90" style ="text-align: center">--%>
+<%--            <div class="card-body">--%>
+<%--                <h5 class="card-title">John Rylands Library</h5>--%>
+<%--                <p class="card-text">John Rylands Library was opened in 1920...</p>--%>
+<%--                <form action ="JohnRylands" method ="post">--%>
+<%--                    <button name="more" value="More" class="btn btn-default">More</button>--%>
+<%--                </form>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--        <br>--%>
+        <div class="jumbotron" style="background-color:#007E33; position:relative; top:100px;">
+        <div class="card w-90" style ="text-align:center;">
             <div class="card-body">
-                <h5 class="card-title">John Rylands Library</h5>
-                <p class="card-text">John Rylands Library was opened in 1920...</p>
-                <form action ="JohnRylands" method ="post">
-                    <button name="more" value="More" class="btn btn-default">More</button>
+<%--                <h5 class="card-title">Generate</h5>--%>
+<%--                <p class="card-text">Generate your own TimeMap based on a .csv file upload</p>--%>
+                <form action ="Generator" method ="POST" enctype="multipart/form-data">
+                    <input style="position:relative; left:330px;" type="file" name="file" /><br>
+                    Destination: <input type ="text" value="/tmp" name="destination";/> <br><br>
+                    <input class ="btn btn-default" type ="submit" value="Upload" name ="upload" id="upload"/>
+<%--                <button name="more" value="More" class="btn btn-default">More</button>--%>
                 </form>
             </div>
         </div>
-        <br>
-
-        <div class="card w-90" style ="text-align: center">
-            <div class="card-body">
-                <h5 class="card-title">Whitworth Hall</h5>
-                <p class="card-text">The Whitworth Hall is opened by the Prince of Wales...</p>
-                <form action ="WhitworthHall" method ="post">
-                    <button name="more" value="More" class="btn btn-default">More</button>
-                </form>
-            </div>
         </div>
         <br>
+
     </div>
 
 </section>
