@@ -63,8 +63,7 @@ public class EventSelector extends HttpServlet {
         csvWriter.writeNext(date);
 
         csvWriter.close();
-
-
+        
     }
 }
 

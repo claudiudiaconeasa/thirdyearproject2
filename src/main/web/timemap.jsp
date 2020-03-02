@@ -7,6 +7,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="corpus.CsvReader"%>
+<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.ArrayList" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -20,8 +22,6 @@
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
 
-    //Js scripts
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body class="theme-invert">
 <section class="section" id="contact">
@@ -37,7 +37,7 @@
               Generate example
             </button>
         </p>
-        <%CsvReader reader = new CsvReader();%>
+        <% HashMap<Integer, ArrayList<HashMap<String, String>>> articles =  CsvReader.getArticles("history.csv");%>
         <div class="collapse" id="collapseExample" style="position:relative; top:30px; left:230px;">
             <div class="card card-body">
                 Select one event per month in order to convert an example of a TimeMap into a calendar
@@ -48,9 +48,10 @@
                 <div class="card card-body">
                     <label for ="january">January: </label>
                     <select id ="january" name ="january">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <% ArrayList<HashMap<String, String>> articlesForJanuary = articles.get(1); %>
+                        <% for(int i = 0; i < articlesForJanuary.size(); i+=1) { %>
+                            <option value="${articlesForJanuary[i].get("id")}">${articlesForJanuary[i].get("title")}</option>
+                        <% } %>
                     </select>
                 </div>
 
