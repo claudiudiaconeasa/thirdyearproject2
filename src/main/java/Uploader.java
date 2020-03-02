@@ -35,7 +35,7 @@ public class Uploader extends HttpServlet
 
         final PrintWriter writer = response.getWriter();
 
-        final String path = request.getParameter("destination");
+        final String path = "/tmp";
 
         OutputStream out = null;
         InputStream filecontent = null;

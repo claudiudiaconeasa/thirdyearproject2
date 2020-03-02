@@ -32,13 +32,12 @@
     <div class="container">
         <h2 style ="text-align:center">Generate your own TimeMap based on a .csv file upload</h2>
         <br>
-        <div class="jumbotron" style="background-color:#007E33; position:relative; top:100px;">
+        <div class="jumbotron" style="background-color:#007E33; position:relative; top:50px;">
         <div class="card w-90" style ="text-align:center;">
             <div class="card-body">
                 <form action ="Uploader" method ="post" enctype="multipart/form-data">
-                    <input style="position:relative; left:330px;" type="file" name="file" /><br>
-                    Destination: <input type ="text" value="/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/images" name="destination";/> <br><br>
-                    <input class ="btn btn-default" type ="submit" value="Upload" name ="upload" id="upload"/>
+                    <input style="position:relative; left:375px;" type="file" name="file" /><br>
+                    <input class ="btn btn-default" type ="submit" value="Generate" name ="upload" id="upload"/>
                 </form>
             </div>
         </div>
