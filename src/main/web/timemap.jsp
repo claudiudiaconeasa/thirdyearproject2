@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="corpus.CsvReader"%>
 <html>
 <head>
     <meta charset="utf-8">
@@ -18,6 +19,9 @@
     <link rel="stylesheet" href="template/css/magister.css">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
+
+    //Js scripts
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 </head>
 <body class="theme-invert">
 <section class="section" id="contact">
@@ -29,10 +33,11 @@
         </div>
 
         <p>
-            <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="position:relative; top:30px; left:230px;">
+            <button type ="button" name="load_data" class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" style="position:relative; top:30px; left:230px;">
               Generate example
-            </a>
+            </button>
         </p>
+        <%CsvReader reader = new CsvReader();%>
         <div class="collapse" id="collapseExample" style="position:relative; top:30px; left:230px;">
             <div class="card card-body">
                 Select one event per month in order to convert an example of a TimeMap into a calendar
