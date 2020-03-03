@@ -59,7 +59,4 @@
         <url-pattern>/WhitworthHall</url-pattern>
     </servlet-mapping>
 
-
-
-
 </web-app>

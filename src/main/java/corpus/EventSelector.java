@@ -63,6 +63,9 @@ public class EventSelector extends HttpServlet {
         FileWriter outputfile = new FileWriter(file);
         CSVWriter csvWriter = new CSVWriter(outputfile);
 
+        String[] columnNames = {"Title", "Start", "Description", "Place", "Location", "Media", "Source URL"};
+        csvWriter.writeNext(columnNames);
+
         csvWriter.writeAll(selectedRecords);
         csvWriter.close();
         
