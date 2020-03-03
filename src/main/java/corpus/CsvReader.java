@@ -15,12 +15,13 @@ public class CsvReader
 {
     private static final String path = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/csvFiles/";
 
-    public static HashMap<Integer, ArrayList<HashMap<String, String>>> getArticles(String fileName) throws IOException {
+    public static HashMap<Integer, ArrayList<Article>> getArticles(String fileName) throws IOException {
         String filePath = path + fileName;
 
         // The keys of the HashMap will be integers from 1 to 12, representing the number of each month
-        HashMap<Integer, ArrayList<HashMap<String, String>>> articles = new HashMap<Integer, ArrayList<HashMap<String, String>>>();
+        HashMap<Integer, ArrayList<Article>> articles = new HashMap<Integer, ArrayList<Article>>();
 
+        //Reading from the history.csv TimeMap
         Reader reader = Files.newBufferedReader(Paths.get(filePath));
         CSVReader csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build();
 
@@ -30,36 +31,34 @@ public class CsvReader
 
         while ((record = csvReader.readNext()) != null)
         {
-            // Here, we extract the date string from the CSV
+            //record[1] is the second column with our date
             String date = record[1];
 
-            // Now we need to get the month from the date string
+            //Splitting the date to add on the select form based on "/"
             String[] dateParameters = date.split("/");
 
-            // The second element on that dateParameters array is the month
-            // We want to add it to our articles HashMap
+            //Column has an entry of String, it will be casted to int
             Integer month = Integer.parseInt(dateParameters[1]);
 
-            if (articles.containsKey(month)) {
-                HashMap<String, String> newArticle = new HashMap<String, String>();
-                newArticle.put("id", Integer.toString(rowCounter));
-                newArticle.put("title", record[0]);
+            if (articles.containsKey(month))
+            {
+                //Adding article to the articles Hashmap where the key is the month for each arraylist
+                Article newArticle = new Article(Integer.toString(rowCounter), record[0]);
                 articles.get(month).add(newArticle);
             }
+
             else
             {
-                ArrayList<HashMap<String, String>> newMonth = new ArrayList<HashMap<String, String>>();
-                HashMap<String, String> newArticle = new HashMap<String, String>();
-                newArticle.put("id", Integer.toString(rowCounter));
-                newArticle.put("title", record[0]);
+                //Same as previous if statement, just that we have a new array list that needs to be added to the new key
+                ArrayList<Article> newMonth = new ArrayList<Article>();
+                Article newArticle = new Article(Integer.toString(rowCounter), record[0]);
                 newMonth.add(newArticle);
                 articles.put(month, newMonth);
             }
 
+            //Going through each row
             rowCounter++;
         }
-
-        System.out.println(articles.get(1).size());
 
         return articles;
     }

@@ -1,4 +1,8 @@
+import com.opencsv.CSVReader;
+import com.opencsv.CSVReaderBuilder;
 import com.opencsv.CSVWriter;
+import corpus.Article;
+import corpus.CsvReader;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -6,62 +10,60 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 @WebServlet(name = "eventSelector")
 //Requests are expected to be made as: multipart/form-data MME type
 public class EventSelector extends HttpServlet {
+    private static final String path = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/csvFiles/";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         //Retrieving selection of event on that particular month in the form
-        String january = request.getParameter("january");
-        String february = request.getParameter("february");
-        String march = request.getParameter("march");
-        String april = request.getParameter("april");
-        String may = request.getParameter("may");
-        String june = request.getParameter("june");
-        String july = request.getParameter("july");
-        String august = request.getParameter("august");
-        String september = request.getParameter("september");
-        String october = request.getParameter("october");
-        String november = request.getParameter("november");
-        String december = request.getParameter("december");
+        ArrayList<String> selection = new ArrayList<String>();
 
-        PrintWriter writer = response.getWriter();
+        selection.add(request.getParameter("january"));
+        selection.add(request.getParameter("february"));
+        selection.add(request.getParameter("march"));
+        selection.add(request.getParameter("april"));
+        selection.add(request.getParameter("may"));
+        selection.add(request.getParameter("june"));
+        selection.add(request.getParameter("july"));
+        selection.add(request.getParameter("august"));
+        selection.add(request.getParameter("september"));
+        selection.add(request.getParameter("october"));
+        selection.add(request.getParameter("november"));
+        selection.add(request.getParameter("december"));
 
-        String htmlResponse = "<html";
+        //Name of csv of the whole TimeMap
+        String originalCsvName = "history.csv";
 
-        htmlResponse += "<h2> January selected event is: " + january + "<br/>";
-        htmlResponse += "<h2> February selected event is: " + february + "<br/>";
-        htmlResponse += "<h2> March selected event is: " + march + "<br/>";
-        htmlResponse += "<h2> April selected event is: " + april + "<br/>";
-        htmlResponse += "<h2> May selected event is: " + may + "<br/>";
-        htmlResponse += "<h2> June selected event is: " + june + "<br/>";
-        htmlResponse += "<h2> July selected event is: " + july + "<br/>";
-        htmlResponse += "<h2> August selected event is: " + august + "<br/>";
-        htmlResponse += "<h2> September selected event is: " + september + "<br/>";
-        htmlResponse += "<h2> October selected event is: " + october + "<br/>";
-        htmlResponse += "<h2> November selected event is: " + november + "<br/>";
-        htmlResponse += "<h2> December selected event is: " + december + "<br/>";
+        //Reading from CsvFile
+        Reader reader = Files.newBufferedReader(Paths.get(path + originalCsvName));
+        CSVReader originalCsvReader = new CSVReaderBuilder(reader).withSkipLines(1).build();
 
-        writer.println(htmlResponse);
+        //List of arrays which each entry based on the row ID
+        List<String[]> records = originalCsvReader.readAll();
 
-        File file = new File("/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/images/history.csv");
+        //List of arrays having each column of a row, basically all the entries corresponding to each column just on that particular row
+        ArrayList<String[]> selectedRecords = new ArrayList<String[]>();
 
-        // create FileWriter object with file as parameter
+        for (int i=0; i < selection.size(); i++)
+        {
+            Integer rowNumber = Integer.parseInt(selection.get(i));
+            selectedRecords.add(records.get(rowNumber));
+        }
+
+        //Writing to a new csvFile, only the events from the form selections
+        File file = new File("/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/generatedCsv/historyGenerated.csv");
         FileWriter outputfile = new FileWriter(file);
-
-        // create CSVWriter with ';' as separator
         CSVWriter csvWriter = new CSVWriter(outputfile);
 
-        String [] columns = {"Title", "Date"};
-        csvWriter.writeNext(columns);
-
-        String [] title = {january,february};
-        csvWriter.writeNext(title);
-
-        String[] date = {"12/05/1995", "17/06/1944"};
-        csvWriter.writeNext(date);
-
+        csvWriter.writeAll(selectedRecords);
         csvWriter.close();
         
     }

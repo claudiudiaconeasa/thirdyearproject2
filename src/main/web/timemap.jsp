@@ -9,6 +9,9 @@
 <%@ page import="corpus.CsvReader"%>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="corpus.Article" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -37,132 +40,144 @@
               Generate example
             </button>
         </p>
-        <% HashMap<Integer, ArrayList<HashMap<String, String>>> articles =  CsvReader.getArticles("history.csv");%>
         <div class="collapse" id="collapseExample" style="position:relative; top:30px; left:230px;">
             <div class="card card-body">
                 Select one event per month in order to convert an example of a TimeMap into a calendar
             </div>
 
+            <% HashMap<Integer, ArrayList<Article>> articles =  CsvReader.getArticles("history.csv"); %>
+
             <form name ="selectEvents" method="POST" action ="EventSelector">
              <%--January--%>
-                <div class="card card-body">
+                 <% request.setAttribute("articlesForJanuary", articles.get(1)); %>
+                 <div class="card card-body">
                     <label for ="january">January: </label>
                     <select id ="january" name ="january">
-                        <% ArrayList<HashMap<String, String>> articlesForJanuary = articles.get(1); %>
-                        <% for(int i = 0; i < articlesForJanuary.size(); i+=1) { %>
-                            <option value="${articlesForJanuary[i].get("id")}">${articlesForJanuary[i].get("title")}</option>
-                        <% } %>
+                        <c:forEach items="${articlesForJanuary}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
            <%--February--%>
+                 <% request.setAttribute("articlesForFebruary", articles.get(2)); %>
                 <div class="card card-body">
                     <label for ="february">February: </label>
                     <select id ="february" name ="february">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForFebruary}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
             <%--March--%>
+                 <% request.setAttribute("articlesForMarch", articles.get(3)); %>
                 <div class="card card-body">
                     <label for ="march">March: </label>
                     <select id ="march" name ="march">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForMarch}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
             <%--April--%>
+                 <% request.setAttribute("articlesForApril", articles.get(4)); %>
                 <div class="card card-body">
                     <label for ="april">April: </label>
                     <select id ="april" name ="april">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForApril}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
 
                 </div>
 
             <%--May--%>
+                 <% request.setAttribute("articlesForMay", articles.get(5)); %>
                 <div class="card card-body">
                     <label for ="may">May: </label>
                     <select id ="may" name ="may">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForMay}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
             <%--June--%>
+                 <% request.setAttribute("articlesForJune", articles.get(6)); %>
                 <div class="card card-body">
                     <label for ="june">June: </label>
                     <select id ="june" name ="june">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForJune}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
             <%--July--%>
+                 <% request.setAttribute("articlesForJuly", articles.get(7)); %>
                 <div class="card card-body">
                     <label for ="july">July: </label>
                     <select id ="july" name ="july">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForJuly}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
             <%--August--%>
+                 <% request.setAttribute("articlesForAugust", articles.get(8)); %>
                 <div class="card card-body">
                     <label for ="august">August: </label>
                     <select id ="august" name ="august">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForAugust}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
             <%--September--%>
+                 <% request.setAttribute("articlesForSeptember", articles.get(9)); %>
                 <div class="card card-body">
                     <label for ="september">September: </label>
                     <select id ="september" name ="september">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForSeptember}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
             <%--October--%>
+                 <% request.setAttribute("articlesForOctober", articles.get(10)); %>
                 <div class="card card-body">
                     <label for ="october">October: </label>
                     <select id ="october" name ="october">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForOctober}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
             <%--November--%>
+                 <% request.setAttribute("articlesForNovember", articles.get(11)); %>
                 <div class="card card-body">
                     <label for ="november">November: </label>
                     <select id ="november" name ="november">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForNovember}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
             <%--December--%>
+                 <% request.setAttribute("articlesForDecember", articles.get(12)); %>
                 <div class="card card-body">
                     <label for ="december">December: </label>
                     <select id ="december" name ="december">
-                        <option value = "eventone">Event one</option>
-                        <option value = "eventtwo">Event two</option>
-                        <option value = "eventthree">Event three</option>
+                        <c:forEach items="${articlesForDecember}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
                     </select>
                 </div>
 
