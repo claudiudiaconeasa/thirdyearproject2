@@ -4,6 +4,7 @@ import com.opencsv.CSVWriter;
 import corpus.Article;
 import corpus.CsvReader;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,7 @@ import java.util.List;
 //Requests are expected to be made as: multipart/form-data MME type
 public class EventSelector extends HttpServlet {
     private static final String path = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/csvFiles/";
+
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -52,8 +54,7 @@ public class EventSelector extends HttpServlet {
         //List of arrays having each column of a row, basically all the entries corresponding to each column just on that particular row
         ArrayList<String[]> selectedRecords = new ArrayList<String[]>();
 
-        for (int i=0; i < selection.size(); i++)
-        {
+        for (int i = 0; i < selection.size(); i++) {
             Integer rowNumber = Integer.parseInt(selection.get(i));
             selectedRecords.add(records.get(rowNumber));
         }
@@ -68,7 +69,40 @@ public class EventSelector extends HttpServlet {
 
         csvWriter.writeAll(selectedRecords);
         csvWriter.close();
-        
+
+        //Generates a pdf from the form
+        generatePdf(request, response);
+    }
+
+    private void generatePdf(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
+    {
+
+        String path = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/pdfFiles/FirstCalendar (1).pdf";
+
+        File downloadFile = new File(path);
+        FileInputStream in = new FileInputStream(downloadFile);
+
+        response.setContentType("application/octet-stream");
+        response.setContentLength((int) downloadFile.length());
+
+        // Set file to be returned as the pdf to the user - download
+        String key = "Content-Disposition";
+        String value = String.format("attachment; filename=\"%s\"", downloadFile.getName());
+
+        response.setHeader(key, value);
+
+        //Returning the stream from the response - actually receiving the file
+        OutputStream out = response.getOutputStream();
+
+        byte[] buffer = new byte[4096];
+        int bytes = -1;
+
+        while ((bytes = in.read(buffer)) != -1)
+        {
+            out.write(buffer, 0, bytes);
+        }
+
+
     }
 }
 
