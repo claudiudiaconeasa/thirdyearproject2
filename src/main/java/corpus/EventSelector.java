@@ -16,6 +16,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import org.python.util.PythonInterpreter;
 
 @WebServlet(name = "eventSelector")
 //Requests are expected to be made as: multipart/form-data MME type
@@ -70,17 +71,45 @@ public class EventSelector extends HttpServlet {
         csvWriter.writeAll(selectedRecords);
         csvWriter.close();
 
+//        System.out.println(System.getProperty("user.dir"));
         //Generates a pdf from the form
         generatePdf(request, response);
+
+        //A python script for generating the calendar as a .pdf will be run
+//        String pythonOutput = null;
+//
+////        String scriptPath = "python /Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/java/corpus/CalendarGeneratorPython/callirhoe/creator.py /Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/java/corpus/CalendarGeneratorPython/callirhoe/Events/events.csv"
+////        String pythonpath = "/usr/bin/python2.7"
+//
+//        Process p = Runtime.getRuntime().exec( "python /Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/java/corpus/hello.py");
+//        BufferedReader stdInput = new BufferedReader(new InputStreamReader(p.getInputStream()));
+//
+//        //The command will have an output, it will be read here
+//        System.out.println("Output of the python script:\n");
+//        while ((pythonOutput = stdInput.readLine()) != null) {
+//            System.out.println(pythonOutput);
+//        }
     }
 
     private void generatePdf(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
     {
 
-        String path = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/pdfFiles/FirstCalendar (1).pdf";
+       String path = "/../../template/pdfFiles/FirstCalendar (1).pdf";
+//       String relative =
+//       String absolutePath = path.toRelativePath
+//        String path = getClass().getResource("FirstCalendar (1).pdf").getPath();
+//        template/pdfFiles/FirstCalendar (1).pdf
+//        String path = "template/pdfFiles/FirstCalendar (1).pdf";
+//        String base = "/template";
+//
+//        String relative = new File(base).toURI().relativize(new File(path).toURI()).getPath();
 
-        File downloadFile = new File(path);
-        FileInputStream in = new FileInputStream(downloadFile);
+
+        File downloadFile = new File("/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/pdfFiles/FirstCalendar (1).pdf");
+        String relativePath = downloadFile.getCanonicalPath();
+
+        File passDownloadFile = new File(relativePath);
+        FileInputStream in = new FileInputStream(passDownloadFile);
 
         response.setContentType("application/octet-stream");
         response.setContentLength((int) downloadFile.length());
