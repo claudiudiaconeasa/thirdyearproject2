@@ -47,7 +47,7 @@ public class Uploader extends HttpServlet
         String randomId = id.toString() + ".csv";
 
         //Remove .csv extension in the name and add +.json
-        String randomIdJson = randomId.substring(0, randomId.length() - 4) + ".json";
+        String randomIdJson = id + ".json";
 
         // Create path components to save the file
         final Part filePart = request.getPart("file");
