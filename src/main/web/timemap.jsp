@@ -52,7 +52,7 @@
             </div>
             <br>
 
-            <% HashMap<Integer, ArrayList<Article>> articles =  CsvReader.getArticles("history.csv"); %>
+            <% HashMap<Integer, ArrayList<Article>> articles =  CsvReader.getArticles("historyCorpus.csv"); %>
 
             <form name ="selectEvents" method="POST" action ="EventSelector" onsubmit="waiting()">
              <%--January--%>
