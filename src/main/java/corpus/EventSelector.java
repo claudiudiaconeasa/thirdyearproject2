@@ -77,15 +77,15 @@ public class EventSelector extends HttpServlet {
     }
 
 
-    public void sendCsvRequest(String url, String attachmentFilePath, String outputFilePathName, HttpServletRequest request, HttpServletResponse response) throws IOException
+    public void sendCsvRequest(String url, String path, String outputFilePathName, HttpServletRequest request, HttpServletResponse response) throws IOException
     {
-        File file = new File(attachmentFilePath);
+        File file = new File(path);
 
             //Set POST general headers along with the boundary string (the seperator string of each part)
             URLConnection connection = new URL(url).openConnection();
             connection.setDoOutput(true);
 
-             String boundary = "------------------------" + Long.toHexString(System.currentTimeMillis());
+            String boundary = "------------------------" + Long.toHexString(System.currentTimeMillis());
             connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
 
             OutputStream output = connection.getOutputStream();
