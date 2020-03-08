@@ -25,6 +25,12 @@
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
 
+    <script>
+        function waiting(){
+          alert("Your calendar will get downloaded in a few moments, please wait")
+        }
+    </script>
+
 </head>
 <body class="theme-invert">
 <section class="section" id="contact">
@@ -32,7 +38,7 @@
 
         <h2 class="text-center title" style="position:relative; left: 135px;">Chronology of Events</h2>
         <div class="row">
-            <iframe src="https://timemapper.okfnlabs.org/anon/hbz420-third-year-project?embed=1" scrolling ="yes" frameborder="0" style="border: none; position:relative; left:250px;" width="80%" height="80%"></iframe>
+            <iframe id="timemapper1" src="https://timemapper.okfnlabs.org/anon/hbz420-third-year-project?embed=1" scrolling ="yes" frameborder="0" style="border: none; position:relative; left:250px;" width="80%" height="80%"></iframe>
         </div>
 
         <p>
@@ -41,13 +47,14 @@
             </button>
         </p>
         <div class="collapse" id="collapseExample" style="position:relative; top:30px; left:230px;">
-            <div class="card card-body">
-                Select one event per month in order to convert an example of a TimeMap into a calendar
+            <div class="card card-body" style="font-size: 20px;">
+                Select one event per month in order to convert an example of a TimeMap into a calendar:
             </div>
+            <br>
 
             <% HashMap<Integer, ArrayList<Article>> articles =  CsvReader.getArticles("history.csv"); %>
 
-            <form name ="selectEvents" method="POST" action ="EventSelector">
+            <form name ="selectEvents" method="POST" action ="EventSelector" onsubmit="waiting()">
              <%--January--%>
                  <% request.setAttribute("articlesForJanuary", articles.get(1)); %>
                  <div class="card card-body">
@@ -183,7 +190,7 @@
 
             <%--Generate--%>
             <div class="card card-body">
-               <input type ="submit" value="Generate" />
+               <input class="btn btn-success" type ="submit" value="Generate" />
             </div>
         </form>
 

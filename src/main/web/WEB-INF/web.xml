@@ -48,6 +48,15 @@
         <url-pattern>/Uploader</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Downloader</servlet-name>
+        <servlet-class>Downloader</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Downloader</servlet-name>
+        <url-pattern>/Downloader</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>WhitworthHall</servlet-name>

@@ -111,7 +111,7 @@
             <div class="item">
                 <img src="template/images/university.jpg" alt="Univeristy place" style="width:100%;">
                 <h5><strong><%=resultSetTitleUtility.getString("title")%><br></strong></h5>
-                <p style="font-size: 50px"><%=resultSetUtility.getString("description")%></p>
+                <p style="font-size: 50px">Students across all academic years will get the chance to explore in depth about the University they're studying at and the City of Manchester in terms of the cultural past events</p>
             </div>
 
             <div class="item">

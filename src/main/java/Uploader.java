@@ -1,3 +1,4 @@
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -23,9 +24,11 @@ public class Uploader extends HttpServlet
         }
         return null;
     }
+
     //Retrieves the destination and filepart
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+
         response.setContentType("text/html;charset=UTF-8");
         int read = 0;
 
@@ -35,7 +38,7 @@ public class Uploader extends HttpServlet
 
         final PrintWriter writer = response.getWriter();
 
-        final String path = "/tmp";
+        final String path = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/uploadedFile";
 
         OutputStream out = null;
         InputStream filecontent = null;
@@ -50,8 +53,16 @@ public class Uploader extends HttpServlet
         {
             out.write(bytes, 0, read);
         }
-        writer.println("New file " + name + " created at " + path);
+
+//        writer.println("New file " + name + " created at " + path);
+        //Going to the download button
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/download.jsp");
+        dispatcher.forward(request, response);
+
+
     }
-}
+
+    }
+
 
 
