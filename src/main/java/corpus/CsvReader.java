@@ -13,17 +13,28 @@ import java.util.HashMap;
 
 public class CsvReader
 {
-    private static final String path = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/csvFiles/";
+    private static final String csvPath = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/csvFiles/";
+    private static final String uploadedCsvPath = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/uploadedTimeLineCsv/";
 
-    public static HashMap<Integer, ArrayList<Article>> getArticles(String fileName) throws IOException {
-        String filePath = path + fileName;
+    public static CSVReader getReader(String fileName, boolean uploaded) throws IOException {
+        String filePath;
 
-        // The keys of the HashMap will be integers from 1 to 12, representing the number of each month
-        HashMap<Integer, ArrayList<Article>> articles = new HashMap<Integer, ArrayList<Article>>();
+        if(uploaded) {
+            filePath = uploadedCsvPath + fileName;
+        } else {
+            filePath = csvPath + fileName;
+        }
 
         //Reading from the history.csv TimeMap
         Reader reader = Files.newBufferedReader(Paths.get(filePath));
         CSVReader csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build();
+
+        return csvReader;
+    }
+
+    public static HashMap<Integer, ArrayList<Article>> getArticlesForForm(CSVReader csvReader) throws IOException {
+        // The keys of the HashMap will be integers from 1 to 12, representing the number of each month
+        HashMap<Integer, ArrayList<Article>> articles = new HashMap<Integer, ArrayList<Article>>();
 
         String[] record;
 

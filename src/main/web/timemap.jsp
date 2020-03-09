@@ -10,6 +10,7 @@
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="corpus.Article" %>
+<%@ page import="com.opencsv.CSVReader" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -52,7 +53,8 @@
             </div>
             <br>
 
-            <% HashMap<Integer, ArrayList<Article>> articles =  CsvReader.getArticles("historyCorpus.csv"); %>
+            <% CSVReader reader =  CsvReader.getReader("historyCorpus.csv", false); %>
+            <% HashMap<Integer, ArrayList<Article>> articles =  CsvReader.getArticlesForForm(reader); %>
 
             <form name ="selectEvents" method="POST" action ="EventSelector" onsubmit="waiting()">
              <%--January--%>
