@@ -17,7 +17,7 @@ public class Downloader extends HttpServlet
     {
         String id = request.getParameter("jsonId");
 
-        PdfManager.sendCsvRequest("http://127.0.0.1:5000/generate","/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/uploadedTimeLineCsv/" + id + ".csv",
+        PdfManager.sendCsvRequest("http://127.0.0.1:5000/generate","../../thirdyearproject/src/main/web/template/uploadedTimeLineCsv/" + id + ".csv",
             "success", request, response);
     }
 

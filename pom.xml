@@ -58,37 +58,13 @@
             <version>2.0</version>
         </dependency>
 
-
-
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
             <version>1.8.4</version>
             <scope>test</scope>
         </dependency>
-
-
-<!--        <dependency>-->
-<!--            <groupId>info.magnolia.rest</groupId>-->
-<!--            <artifactId>magnolia-rest-services</artifactId>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>info.magnolia.rest</groupId>-->
-<!--            <artifactId>magnolia-rest-content-delivery</artifactId>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>info.magnolia.rest</groupId>-->
-<!--            <artifactId>magnolia-rest-tools</artifactId>-->
-<!--        </dependency>-->
-
-        <dependency>
-            <groupId>org.python</groupId>
-            <artifactId>jython-standalone</artifactId>
-            <version>2.5.2</version>
-        </dependency>
-
+        
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -172,8 +148,4 @@
             </plugin>
         </plugins>
     </build>
-
-
-
-
 </project>

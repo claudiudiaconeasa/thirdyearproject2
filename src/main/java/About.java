@@ -3,13 +3,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.FileSystems;
+import java.nio.file.Path;
 
 //Redirect to about section with presentation as slides
 @WebServlet(name = "About")
 public class About extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/aboutDescription.jsp").forward(request,response); }
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { }
+        request.getRequestDispatcher("/aboutDescription.jsp").forward(request,response);
+    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
 }

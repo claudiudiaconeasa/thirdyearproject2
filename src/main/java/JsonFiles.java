@@ -19,7 +19,7 @@ public class JsonFiles extends HttpServlet
     {
         String jsonId = request.getPathInfo().substring((1));
 
-        String path = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/generatedTimeLineJson/" + jsonId + ".json";
+        String path = "../../thirdyearproject/src/main/web/template/generatedTimeLineJson/" + jsonId + ".json";
         String content = new String(Files.readAllBytes(Paths.get(path)), StandardCharsets.UTF_8);
 
         PrintWriter out = response.getWriter();

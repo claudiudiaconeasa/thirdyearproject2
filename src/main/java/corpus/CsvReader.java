@@ -13,8 +13,8 @@ import java.util.HashMap;
 
 public class CsvReader
 {
-    private static final String csvPath = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/csvFiles/";
-    private static final String uploadedCsvPath = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/uploadedTimeLineCsv/";
+    private static final String csvPath = "../../thirdyearproject/src/main/web/template/csvFiles/";
+    private static final String uploadedCsvPath = "../../thirdyearproject/src/main/web/template/uploadedTimeLineCsv/";
 
     public static CSVReader getReader(String fileName, boolean uploaded) throws IOException {
         String filePath;

@@ -19,7 +19,7 @@ import java.util.List;
 @WebServlet(name = "eventSelector")
 //Requests are expected to be made as: multipart/form-data MME type
 public class EventSelector extends HttpServlet {
-    private static final String path = "/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/csvFiles/";
+    private static final String path = "../../thirdyearproject/src/main/web/template/csvFiles/";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -59,7 +59,7 @@ public class EventSelector extends HttpServlet {
         }
 
         //Writing to a new csvFile, only the events from the form selections
-        File file = new File("/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/generatedCsv/historyGenerated.csv");
+        File file = new File("../../thirdyearproject/src/main/web/template/generatedCsv/historyGenerated.csv");
         FileWriter outputfile = new FileWriter(file);
         CSVWriter csvWriter = new CSVWriter(outputfile);
 
@@ -72,7 +72,7 @@ public class EventSelector extends HttpServlet {
 
         csvWriter.close();
 
-        PdfManager.sendCsvRequest("http://127.0.0.1:5000/generate","/Users/claudiudiaconeasa/Documents/Claudiu/thirdyearproject/src/main/web/template/generatedCsv/historyGenerated.csv",
+        PdfManager.sendCsvRequest("http://127.0.0.1:5000/generate","../../thirdyearproject/src/main/web/template/generatedCsv/historyGenerated.csv",
                        "success", request, response);
     }
 
