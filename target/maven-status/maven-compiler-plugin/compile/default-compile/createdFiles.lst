@@ -1,3 +1,9 @@
+PdfManager.class
+corpus/CsvReader.class
+EventSelector.class
+Preview.class
+corpus/Article.class
+Uploader.class
+JsonFiles.class
+Downloader.class
 About.class
-JohnRylands.class
-WhitworthHall.class
