@@ -197,8 +197,174 @@
         </form>
 
         </div>
+
+        <div class="row">
+            <iframe id="timemapper1" src="https://timemapper.okfnlabs.org/anon/uf3spi-history-of-computing?embed=1" scrolling ="yes" frameborder="0" style="border: none; position:relative; left:250px; top:40px;" width="80%" height="80%"></iframe>
         </div>
+
+        <p>
+            <button type ="button" name="load_data" class="btn btn-success" data-toggle="collapse" href="#collapseExampleTwo" role="button" aria-expanded="false" aria-controls="collapseExample" style="position:relative; top:60px; left:230px;">
+                Generate example
+            </button>
+        </p>
+
+        <div class = "collapse" id="collapseExampleTwo" style="position:relative; top:65px; left:230px;">
+            <div class="card card-body" style="font-size: 20px;">
+                Select one event per month in order to convert an example of a TimeMap into a calendar:
+            </div>
+            <br>
+
+            <% CSVReader readerComputing =  CsvReader.getReader("historyComputing.csv", false); %>
+            <% HashMap<Integer, ArrayList<Article>> articlesComputing =  CsvReader.getArticlesForForm(readerComputing); %>
+
+            <form name ="selectEventsComputing" method="POST" action ="EventSelectorComputing" onsubmit="waiting()">
+                <%--January--%>
+                    <% request.setAttribute("articlesForJanuaryComputing", articlesComputing.get(1)); %>
+                <div class="card card-body">
+                    <label for ="january">January: </label>
+                    <select id ="januaryComputing" name ="januaryComputing">
+                        <c:forEach items="${articlesForJanuaryComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <%--February--%>
+                <% request.setAttribute("articlesForFebruaryComputing", articlesComputing.get(2)); %>
+                <div class="card card-body">
+                    <label for ="february">February: </label>
+                    <select id ="februaryComputing" name ="februaryComputing">
+                        <c:forEach items="${articlesForFebruaryComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <%--March--%>
+                <% request.setAttribute("articlesForMarchComputing", articlesComputing.get(3)); %>
+                <div class="card card-body">
+                    <label for ="march">March: </label>
+                    <select id ="marchComputing" name ="marchComputing">
+                        <c:forEach items="${articlesForMarchComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <%--April--%>
+                <% request.setAttribute("articlesForAprilComputing", articlesComputing.get(4)); %>
+                <div class="card card-body">
+                    <label for ="april">April: </label>
+                    <select id ="aprilComputing" name ="aprilComputing">
+                        <c:forEach items="${articlesForAprilComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+
+                </div>
+
+                <%--May--%>
+                <% request.setAttribute("articlesForMayComputing", articlesComputing.get(5)); %>
+                <div class="card card-body">
+                    <label for ="may">May: </label>
+                    <select id ="mayComputing" name ="mayComputing">
+                        <c:forEach items="${articlesForMayComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <%--June--%>
+                <% request.setAttribute("articlesForJuneComputing", articlesComputing.get(6)); %>
+                <div class="card card-body">
+                    <label for ="june">June: </label>
+                    <select id ="juneComputing" name ="juneComputing">
+                        <c:forEach items="${articlesForJuneComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <%--July--%>
+                <% request.setAttribute("articlesForJulyComputing", articlesComputing.get(7)); %>
+                <div class="card card-body">
+                    <label for ="july">July: </label>
+                    <select id ="julyComputing" name ="julyComputing">
+                        <c:forEach items="${articlesForJulyComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <%--August--%>
+                <% request.setAttribute("articlesForAugustComputing", articlesComputing.get(8)); %>
+                <div class="card card-body">
+                    <label for ="august">August: </label>
+                    <select id ="augustComputing" name ="augustComputing">
+                        <c:forEach items="${articlesForAugustComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <%--September--%>
+                <% request.setAttribute("articlesForSeptemberComputing", articlesComputing.get(9)); %>
+                <div class="card card-body">
+                    <label for ="september">September: </label>
+                    <select id ="septemberComputing" name ="septemberComputing">
+                        <c:forEach items="${articlesForSeptemberComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <%--October--%>
+                <% request.setAttribute("articlesForOctoberComputing", articlesComputing.get(10)); %>
+                <div class="card card-body">
+                    <label for ="october">October: </label>
+                    <select id ="octoberComputing" name ="octoberComputing">
+                        <c:forEach items="${articlesForOctoberComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <%--November--%>
+                <% request.setAttribute("articlesForNovemberComputing", articlesComputing.get(11)); %>
+                <div class="card card-body">
+                    <label for ="november">November: </label>
+                    <select id ="novemberComputing" name ="novemberComputing">
+                        <c:forEach items="${articlesForNovemberComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <%--December--%>
+                <% request.setAttribute("articlesForDecemberComputing", articlesComputing.get(12)); %>
+                <div class="card card-body">
+                    <label for ="december">December: </label>
+                    <select id ="decemberComputing" name ="decemberComputing">
+                        <c:forEach items="${articlesForDecemberComputing}" var="article">
+                            <option value="${article.id}">${article.title}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                    <%--Generate--%>
+                    <div class="card card-body">
+                        <input class="btn btn-success" type ="submit"  value="Generate" />
+                    </div>
+            </form>
+
+        </div>
+
+
+
     </div>
+
+<%--    </div>--%>
+
 </section>
 
 </body>

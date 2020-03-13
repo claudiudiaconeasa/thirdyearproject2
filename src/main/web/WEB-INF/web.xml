@@ -39,6 +39,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>EventSelectorComputing</servlet-name>
+        <servlet-class>EventSelectorComputing</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EventSelectorComputing</servlet-name>
+        <url-pattern>/EventSelectorComputing</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>Uploader</servlet-name>
         <servlet-class>Uploader</servlet-class>
     </servlet>
