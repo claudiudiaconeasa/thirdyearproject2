@@ -17,7 +17,6 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.opencsv.CSVReader;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import corpus.Article;
 import corpus.CsvReader;
 import org.json.JSONObject;
@@ -89,7 +88,7 @@ public class Uploader extends HttpServlet
     {
         CSVReader reader =  CsvReader.getReader(fileCsv, true);
 
-        HashMap<String, Collection> events = new HashMap<>();
+        HashMap<String, Collection> events = new HashMap<String, Collection>();
         Collection listOfEvents = new ArrayList<>();
 
         String[] record;
@@ -109,6 +108,10 @@ public class Uploader extends HttpServlet
 
             HashMap<String, String> media = new HashMap<>();
             media.put("url", record[5]);
+//            media.put("thumbnail", record[6]);
+            //            media.put("link", record[6]);
+            //            media.put("link_target", record[6]);
+            //            media.put("thumbnail", record[6]);
 
             event.put("start_date", startDate);
             event.put("text", text);
