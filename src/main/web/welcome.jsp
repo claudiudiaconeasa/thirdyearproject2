@@ -98,7 +98,7 @@
 </section>
 
 
-    <jsp:include page="timemap.jsp"></jsp:include>
+<%--    <jsp:include page="timemap.jsp"></jsp:include>--%>
     <jsp:include page="generate.jsp"></jsp:include>
 <%--    <jsp:include page="contact.jsp"></jsp:include>--%>
 
