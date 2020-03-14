@@ -19,7 +19,7 @@ import java.util.List;
 @WebServlet(name = "eventSelectorComputing")
 //Requests are expected to be made as: multipart/form-data MME type
 public class EventSelectorComputing extends HttpServlet {
-    private static final String path = "../../thirdyearproject/src/main/web/template/csvFiles/";
+    private static final String path = "./src/main/web/template/csvFiles/";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -59,7 +59,7 @@ public class EventSelectorComputing extends HttpServlet {
         }
 
         //Writing to a new csvFile, only the events from the form selections
-        File file = new File("../../thirdyearproject/src/main/web/template/generatedCsv/historyGeneratedComputing.csv");
+        File file = new File("./src/main/web/template/generatedCsv/historyGeneratedComputing.csv");
         FileWriter outputfile = new FileWriter(file);
         CSVWriter csvWriter = new CSVWriter(outputfile);
 
@@ -72,7 +72,7 @@ public class EventSelectorComputing extends HttpServlet {
 
         csvWriter.close();
 
-        PdfManager.sendCsvRequest("http://127.0.0.1:5000/generate","../../thirdyearproject/src/main/web/template/generatedCsv/historyGeneratedComputing.csv",
+        PdfManager.sendCsvRequest("http://127.0.0.1:5000/generate","./src/main/web/template/generatedCsv/historyGeneratedComputing.csv",
                 "success", request, response);
     }
 

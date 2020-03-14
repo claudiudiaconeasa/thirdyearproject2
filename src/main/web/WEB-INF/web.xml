@@ -69,16 +69,6 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>WhitworthHall</servlet-name>
-        <servlet-class>WhitworthHall</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>WhitworthHall</servlet-name>
-        <url-pattern>/WhitworthHall</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
     <servlet-name>JsonFiles</servlet-name>
     <servlet-class>JsonFiles</servlet-class>
 </servlet>

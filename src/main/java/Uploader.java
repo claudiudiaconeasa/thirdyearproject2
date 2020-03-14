@@ -53,7 +53,7 @@ public class Uploader extends HttpServlet
 
         final PrintWriter writer = response.getWriter();
 
-        final String path = "../../thirdyearproject/src/main/web/template/uploadedTimeLineCsv";
+        final String path = "./src/main/web/template/uploadedTimeLineCsv";
 
         OutputStream out = null;
         InputStream filecontent = null;
@@ -116,7 +116,7 @@ public class Uploader extends HttpServlet
 
         events.put("events", listOfEvents);
 
-        String pathJson = "../../thirdyearproject/src/main/web/template/generatedTimeLineJson/";
+        String pathJson = "./src/main/web/template/generatedTimeLineJson/";
         String filePathJson = pathJson + fileJson;
 
         ObjectMapper mapper = new ObjectMapper();

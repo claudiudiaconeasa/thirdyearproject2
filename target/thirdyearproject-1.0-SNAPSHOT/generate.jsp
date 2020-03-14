@@ -32,7 +32,7 @@
 <section class="section" id="themes">
     <div class="container">
         <h2 style ="text-align:center">Generate your own TimeMap based on a .csv file upload</h2>
-        <h3 style ="text-align:center">You should upload only a 12 event csv file, having an event for each particular month</h3>
+        <h3 style ="text-align:center">You should upload TimeMap csv format file, having an event for each particular month</h3>
         <br>
         <div class="jumbotron" style="background-color:#007E33; position:relative; top:50px;">
         <div class="card w-90" style ="text-align:center;">

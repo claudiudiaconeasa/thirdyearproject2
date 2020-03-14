@@ -1,7 +1,7 @@
 .idea
 *.iws
 .DS_Store
-#target/
+target/
 out/
 
 
