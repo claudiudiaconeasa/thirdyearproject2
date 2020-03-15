@@ -74,7 +74,7 @@ public class Uploader extends HttpServlet
 
 
         //Going to the download button
-        response.sendRedirect("/thirdyearproject_war_exploded/preview/" + id);
+        response.sendRedirect("/preview/" + id);
 
     }
 

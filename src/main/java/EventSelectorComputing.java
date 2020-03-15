@@ -72,7 +72,7 @@ public class EventSelectorComputing extends HttpServlet {
 
         csvWriter.close();
 
-        PdfManager.sendCsvRequest("http://127.0.0.1:5000/generate","./src/main/web/template/generatedCsv/historyGeneratedComputing.csv",
+        PdfManager.sendCsvRequest("http://165.22.125.196:1337/generate","./src/main/web/template/generatedCsv/historyGeneratedComputing.csv",
                 "success", request, response);
     }
 
