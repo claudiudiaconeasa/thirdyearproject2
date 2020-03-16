@@ -36,7 +36,7 @@
     <script type="text/javascript">
         <% String jsonId = (String) request.getAttribute("jsonId"); %>
 
-        fetch("http://" + document.location.host + "/json-files/<% out.print(jsonId); %>")
+        fetch(window.location.protocol + "//" + document.location.host + "/json-files/<% out.print(jsonId); %>")
             .then(function(response) { return response.json() })
             .then(function(value) {
                 console.log(value);
@@ -56,6 +56,7 @@
                 <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
             </div>
             <form action="/Downloader" method="POST" style="text-align:center; position:relative; top:50px;" onsubmit="waiting()">
+                <%--Redirecting using that particular json created file upon upload--%>
                 <input type="hidden" value="<% out.print(jsonId); %>" name="jsonId" id="jsonId"/>
                 <input class="btn btn-default" type="submit" value="Download" name="Download" id="download"/>
             </form>

@@ -39,7 +39,7 @@
 
         <h2 class="text-center title" style="position:relative; left: 135px;">Chronology of Events</h2>
         <div class="row">
-            <iframe id="timemapper1" src="https://timemapper.okfnlabs.org/anon/hbz420-third-year-project?embed=1" scrolling ="yes" frameborder="0" style="border: none; position:relative; left:250px;" width="80%" height="80%"></iframe>
+            <iframe id="timemapper1" src="template/timemap/timemapframe.jsp" scrolling ="yes" frameborder="0" style="border: none; position:relative; left:250px;" width="80%" height="80%"></iframe>
         </div>
 
         <p>

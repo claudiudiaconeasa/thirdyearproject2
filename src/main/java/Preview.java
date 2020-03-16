@@ -12,6 +12,8 @@ public class Preview extends HttpServlet
 {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
+        //Id of the generated json file is retrieved
+
         String jsonId = request.getPathInfo().substring((1));
         request.setAttribute("jsonId", jsonId);
 
