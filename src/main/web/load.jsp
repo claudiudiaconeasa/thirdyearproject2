@@ -55,7 +55,7 @@
         var urlParams = new URLSearchParams(window.location.search);
         var calendarId = urlParams.get('id');
 
-        fetch("http://165.22.125.196:1337/poll?idname=" + calendarId)
+        fetch(window.location.protocol + "//" + "165.22.125.196:1337/poll?idname=" + calendarId)
             .then(function(response) {
                 var contentType = response.headers.get('Content-Type');
                 if (contentType == 'application/pdf') {
