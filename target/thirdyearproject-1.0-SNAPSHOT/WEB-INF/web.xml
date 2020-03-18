@@ -88,4 +88,14 @@
         <url-pattern>/preview/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>Validate</servlet-name>
+        <servlet-class>Validate</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Validate</servlet-name>
+        <url-pattern>/validate/*</url-pattern>
+    </servlet-mapping>
+
 </web-app>

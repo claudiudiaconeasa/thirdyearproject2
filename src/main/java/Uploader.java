@@ -50,36 +50,42 @@ public class Uploader extends HttpServlet
 
         // Create path components to save the file
         final Part filePart = request.getPart("file");
+        String fileType = filePart.getContentType();
 
-        final PrintWriter writer = response.getWriter();
-
-        final String path = "./src/main/web/template/uploadedTimeLineCsv";
-
-        OutputStream out = null;
-        InputStream filecontent = null;
-
-        //File copied to the final destination
-        out = new FileOutputStream(new File(path + File.separator + csvId));
-        filecontent = filePart.getInputStream();
-
-        final byte[] bytes = new byte[1024];
-
-        while ((read = filecontent.read(bytes)) != -1)
+        //Validating extension of passed file
+        if (!fileType.equals("text/csv"))
+        { response.sendRedirect("/validate/"); }
+        else
         {
-            out.write(bytes, 0, read);
+            final PrintWriter writer = response.getWriter();
+
+            final String path = "./src/main/web/template/uploadedTimeLineCsv";
+
+            OutputStream out = null;
+            InputStream filecontent = null;
+
+            //File copied to the final destination
+            out = new FileOutputStream(new File(path + File.separator + csvId));
+            filecontent = filePart.getInputStream();
+
+            final byte[] bytes = new byte[1024];
+
+            while ((read = filecontent.read(bytes)) != -1)
+            {
+                out.write(bytes, 0, read);
+            }
+
+            //Convert Csv to Json
+            csvToJson(csvId, jsonId);
+
+            //Going to the download button
+            response.sendRedirect("/preview/" + id);
         }
-
-        //Convert Csv to Json
-        csvToJson(csvId, jsonId);
-
-
-        //Going to the download button
-        response.sendRedirect("/preview/" + id);
-
     }
 
     public void csvToJson(String fileCsv, String fileJson) throws IOException
     {
+
         CSVReader reader =  CsvReader.getReader(fileCsv, true);
 
         HashMap<String, Collection> events = new HashMap<String, Collection>();

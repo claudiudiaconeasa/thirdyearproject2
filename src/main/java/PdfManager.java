@@ -36,26 +36,27 @@ public class PdfManager
         // End of multipart/form-data.
         writer.append(CRLF).append("--" + boundary + "--").flush();
 
-        InputStream Instream = ((HttpURLConnection) connection).getInputStream();
-
-        // Write csv file
-        BufferedInputStream bufferInput = new BufferedInputStream(Instream);
-
-        //Readin from this path
-//        FileOutputStream fileOut = new FileOutputStream(outputFilePathName);
-
-        //Stream to write byte by byte
-//        BufferedOutputStream finalOut = new BufferedOutputStream(fileOut);
-
-        response.setContentType("application/octet-stream");
-        int i;
-        while ((i = bufferInput.read()) != -1)
-        {
-//            finalOut.write(i);
-            //Downloading the file
-            response.getOutputStream().write(i);
+        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+        String inputLine;
+        StringBuffer content = new StringBuffer();
+        while ((inputLine = in.readLine()) != null) {
+            content.append(inputLine);
         }
+        in.close();
 
+        response.sendRedirect("load.jsp?id=" + content.toString());
+//        InputtOutputSStream Instream = ((HttpURLConnection) connection).getInputStream();
+////
+////        // Write csv file
+////        BufferedInputStream bufferInput = new BufferedInputStream(Instream);
+////
+////        response.setContentType("application/octet-stream");
+////        int i;
+////        while ((i = bufferInput.read()) != -1)
+////        {
+////            //Downloading the file
+////            response.getream().write(i);
+//        }
     }
 
 }

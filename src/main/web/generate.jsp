@@ -26,6 +26,42 @@
     <%--My css--%>
     <link rel ="stylesheet" href="template/css/mycss.css">
 
+<%--    <script>--%>
+<%--        var fileExtension = [".csv"];--%>
+
+<%--        function Validate(formInput)--%>
+<%--        {--%>
+<%--            var input = formInput.getElementsByTagName("input");--%>
+<%--            var i = 0;--%>
+<%--            // for (var i = 0; i < input.length; i++)--%>
+<%--            while(i < input.length)--%>
+<%--            {--%>
+<%--                if (input[i].type == "file")--%>
+<%--                {--%>
+<%--                    var name = input[i].value;--%>
+
+<%--                    if (name.length > 0)--%>
+<%--                    {--%>
+<%--                        var flag = false;--%>
+<%--                        var k = 0;--%>
+<%--                        while (k < fileExtension.length)--%>
+<%--                        {--%>
+<%--                            var extension = fileExtension[k];--%>
+<%--                            if (extension.toLowerCase() == name.substr(name.length - extension.length, extension.length).toLowerCase())--%>
+<%--                            {flag = true;}--%>
+<%--                            k++;--%>
+<%--                        }--%>
+<%--                        if (!flag) { alert("The allowed extension is only .csv");--%>
+<%--                            return false;--%>
+<%--                        }--%>
+<%--                    }--%>
+<%--                }--%>
+<%--                i++;--%>
+<%--            }--%>
+<%--            return true;--%>
+<%--        }--%>
+<%--    </script>--%>
+
 </head>
 
 <body class="theme-invert">

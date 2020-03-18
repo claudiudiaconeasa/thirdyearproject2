@@ -30,6 +30,17 @@
         function waiting(){
           alert("Your calendar will get downloaded in a few moments, please wait")
         }
+
+        function getSelection(selection)
+        {
+            // var check = document.getElementById();
+            // if(check == "january") {
+            //     var x = document.getElementById("january").options[document.getElementById("january").selectedIndex].value;
+            //     window.setSlide(x);
+            // }
+            console.log(selection.target.value);
+            window.setSlide(articleIdMapper[selection.target.value].orderNumber);
+        }
     </script>
 
 </head>
@@ -61,7 +72,7 @@
                  <% request.setAttribute("articlesForJanuary", articles.get(1)); %>
                  <div class="card card-body">
                     <label for ="january">January: </label>
-                    <select id ="january" name ="january">
+                    <select id ="january" name ="january" onchange="getSelection(this)">
                         <c:forEach items="${articlesForJanuary}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -72,7 +83,7 @@
                  <% request.setAttribute("articlesForFebruary", articles.get(2)); %>
                 <div class="card card-body">
                     <label for ="february">February: </label>
-                    <select id ="february" name ="february">
+                    <select id ="february" name ="february" onchange="getSelection(this)">
                         <c:forEach items="${articlesForFebruary}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -83,7 +94,7 @@
                  <% request.setAttribute("articlesForMarch", articles.get(3)); %>
                 <div class="card card-body">
                     <label for ="march">March: </label>
-                    <select id ="march" name ="march">
+                    <select id ="march" name ="march" onchange="getSelection(this)">
                         <c:forEach items="${articlesForMarch}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -94,7 +105,7 @@
                  <% request.setAttribute("articlesForApril", articles.get(4)); %>
                 <div class="card card-body">
                     <label for ="april">April: </label>
-                    <select id ="april" name ="april">
+                    <select id ="april" name ="april" onchange="getSelection(this)">
                         <c:forEach items="${articlesForApril}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -106,7 +117,7 @@
                  <% request.setAttribute("articlesForMay", articles.get(5)); %>
                 <div class="card card-body">
                     <label for ="may">May: </label>
-                    <select id ="may" name ="may">
+                    <select id ="may" name ="may" onchange="getSelection(this)">
                         <c:forEach items="${articlesForMay}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -117,7 +128,7 @@
                  <% request.setAttribute("articlesForJune", articles.get(6)); %>
                 <div class="card card-body">
                     <label for ="june">June: </label>
-                    <select id ="june" name ="june">
+                    <select id ="june" name ="june" onchange="getSelection(this)">
                         <c:forEach items="${articlesForJune}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -128,7 +139,7 @@
                  <% request.setAttribute("articlesForJuly", articles.get(7)); %>
                 <div class="card card-body">
                     <label for ="july">July: </label>
-                    <select id ="july" name ="july">
+                    <select id ="july" name ="july" onchange="getSelection(this)">
                         <c:forEach items="${articlesForJuly}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -139,7 +150,7 @@
                  <% request.setAttribute("articlesForAugust", articles.get(8)); %>
                 <div class="card card-body">
                     <label for ="august">August: </label>
-                    <select id ="august" name ="august">
+                    <select id ="august" name ="august" onchange="getSelection(this)">
                         <c:forEach items="${articlesForAugust}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -150,7 +161,7 @@
                  <% request.setAttribute("articlesForSeptember", articles.get(9)); %>
                 <div class="card card-body">
                     <label for ="september">September: </label>
-                    <select id ="september" name ="september">
+                    <select id ="september" name ="september" onchange="getSelection(this)">
                         <c:forEach items="${articlesForSeptember}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -161,7 +172,7 @@
                  <% request.setAttribute("articlesForOctober", articles.get(10)); %>
                 <div class="card card-body">
                     <label for ="october">October: </label>
-                    <select id ="october" name ="october">
+                    <select id ="october" name ="october" onchange="getSelection(this)">
                         <c:forEach items="${articlesForOctober}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -172,7 +183,7 @@
                  <% request.setAttribute("articlesForNovember", articles.get(11)); %>
                 <div class="card card-body">
                     <label for ="november">November: </label>
-                    <select id ="november" name ="november">
+                    <select id ="november" name ="november" onchange="getSelection(this)">
                         <c:forEach items="${articlesForNovember}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -183,7 +194,7 @@
                  <% request.setAttribute("articlesForDecember", articles.get(12)); %>
                 <div class="card card-body">
                     <label for ="december">December: </label>
-                    <select id ="december" name ="december">
+                    <select id ="december" name ="december" onchange="getSelection(this)">
                         <c:forEach items="${articlesForDecember}" var="article">
                             <option value="${article.id}">${article.title}</option>
                         </c:forEach>
@@ -366,6 +377,103 @@
 <%--    </div>--%>
 
 </section>
+
+<script>
+    function compare(a, b) {
+        if (a.date < b.date){
+            return -1;
+        }
+        if (a.date > b.date){
+            return 1;
+        }
+        return 0;
+    }
+
+    function addToAllArticles(allArticlesList, date, id) {
+        var splitDate = date.split("/");
+        allArticlesList.push({
+            id: id,
+            date: splitDate[2] + "/" + splitDate[1] + "/" + splitDate[0],
+        });
+    }
+
+    var allArticles = [];
+
+    <c:forEach items="${articlesForJanuary}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForFebruary}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForMarch}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForApril}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForMay}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForJune}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForJuly}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForAugust}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForSeptember}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForOctober}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForNovember}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForDecember}" var="article">
+    addToAllArticles(allArticles, "${article.date}", ${article.id});
+    </c:forEach>
+
+    allArticles.sort(compare);
+
+    var articleIdMapper = {};
+
+    allArticles.forEach(function(value, index) {
+        var articleWithOrder = {
+            id: value.id,
+            date: value.date,
+            orderNumber: index,
+        };
+
+        articleIdMapper[value.id] = articleWithOrder;
+    });
+
+    document.getElementById('january').addEventListener('change', getSelection);
+    document.getElementById('february').addEventListener('change', getSelection);
+    document.getElementById('march').addEventListener('change', getSelection);
+    document.getElementById('april').addEventListener('change', getSelection);
+    document.getElementById('may').addEventListener('change', getSelection);
+    document.getElementById('june').addEventListener('change', getSelection);
+    document.getElementById('july').addEventListener('change', getSelection);
+    document.getElementById('august').addEventListener('change', getSelection);
+    document.getElementById('september').addEventListener('change', getSelection);
+    document.getElementById('october').addEventListener('change', getSelection);
+    document.getElementById('november').addEventListener('change', getSelection);
+    document.getElementById('december').addEventListener('change', getSelection);
+</script>
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 PdfManager.class
 corpus/CsvReader.class
+Validate.class
 EventSelector.class
 Preview.class
 corpus/Article.class

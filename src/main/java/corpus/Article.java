@@ -4,11 +4,13 @@ public class Article {
 
     public String id;
     public String title;
+    public String date;
 
-    public Article(String id, String title)
+    public Article(String id, String title, String date)
     {
         this.id = id;
         this.title = title;
+        this.date = date;
     }
 
     public String getTitle() { return title; }
@@ -19,4 +21,7 @@ public class Article {
 
     public void setId(String id) { this.id = id; }
 
+    public String getDate() { return date; }
+
+    public void setDate(String date) { this.date = date; }
 }

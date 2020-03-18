@@ -54,7 +54,7 @@ public class CsvReader
             if (articles.containsKey(month))
             {
                 //Adding article to the articles Hashmap where the key is the month for each arraylist
-                Article newArticle = new Article(Integer.toString(rowCounter), record[0]);
+                Article newArticle = new Article(Integer.toString(rowCounter), record[0], record[1]);
                 articles.get(month).add(newArticle);
             }
 
@@ -62,7 +62,7 @@ public class CsvReader
             {
                 //Same as previous if statement, just that we have a new array list that needs to be added to the new key
                 ArrayList<Article> newMonth = new ArrayList<Article>();
-                Article newArticle = new Article(Integer.toString(rowCounter), record[0]);
+                Article newArticle = new Article(Integer.toString(rowCounter), record[0], record[1]);
                 newMonth.add(newArticle);
                 articles.put(month, newMonth);
             }
