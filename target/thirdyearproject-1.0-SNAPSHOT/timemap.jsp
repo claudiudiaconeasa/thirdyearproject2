@@ -34,13 +34,13 @@
         function getSelection(selection)
         {
             var firstIframeWindow = document.getElementById("timemapper1").contentWindow;
-            firstIframeWindow.setSlide(articleIdMapper[selection.target.value]);
+            firstIframeWindow.goToEvent(articleIdMapper[selection.target.value]);
         }
 
         function getSelectionComputing(selection)
         {
             var secondIframeWindow = document.getElementById("timemapper2").contentWindow;
-            secondIframeWindow.setSlide(articleIdMapperComputing[selection.target.value]);
+            secondIframeWindow.goToEvent(articleIdMapperComputing[selection.target.value]);
         }
     </script>
 

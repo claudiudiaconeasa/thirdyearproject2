@@ -5182,8 +5182,6 @@ if(typeof VMM != 'undefined' && typeof VMM.Slider == 'undefined') {
 		this.setSlide = function(n) {
 			goToSlide(n);
 		};
-
-		window.setSlide = this.setSlide;
 		
 		/* ON EVENT
 		================================================== */
@@ -7229,6 +7227,8 @@ if(typeof VMM != 'undefined' && typeof VMM.Timeline == 'undefined') {
 				timenav.setMarker(config.current_slide, config.ease,config.duration);
 			} 
 		}
+
+		window.goToEvent = goToEvent;
 		
 		function setHash(n) {
 			if (config.hash_bookmark) {
