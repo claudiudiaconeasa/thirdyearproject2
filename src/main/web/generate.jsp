@@ -67,7 +67,7 @@
 <body class="theme-invert">
 <section class="section" id="themes">
     <div class="container">
-        <h2 style ="text-align:center">Generate your own TimeMap</h2>
+        <h2 style ="text-align:center">Generate your own TimeMap with at least 12 events, 1 for each month</h2>
         <h3 style ="text-align:center">Use the following format for generation: </h3>
         <form action ="DownloadExample" style ="position:relative; text-align:center;" method ="post" enctype ="multipart/form-data">
             <input class ="btn btn-default" type ="submit" value="Download Example" name ="downloadExample" id="downloadExample"/>
