@@ -33,13 +33,14 @@
 
         function getSelection(selection)
         {
-            // var check = document.getElementById();
-            // if(check == "january") {
-            //     var x = document.getElementById("january").options[document.getElementById("january").selectedIndex].value;
-            //     window.setSlide(x);
-            // }
-            console.log(selection.target.value);
-            window.setSlide(articleIdMapper[selection.target.value].orderNumber);
+            var firstIframeWindow = document.getElementById("timemapper1").contentWindow;
+            firstIframeWindow.setSlide(articleIdMapper[selection.target.value]);
+        }
+
+        function getSelectionComputing(selection)
+        {
+            var secondIframeWindow = document.getElementById("timemapper2").contentWindow;
+            secondIframeWindow.setSlide(articleIdMapperComputing[selection.target.value]);
         }
     </script>
 
@@ -210,7 +211,7 @@
         </div>
 
         <div class="row">
-            <iframe id="timemapper1" src="https://timemapper.okfnlabs.org/anon/uf3spi-history-of-computing?embed=1" scrolling ="yes" frameborder="0" style="border: none; position:relative; left:250px; top:40px;" width="80%" height="80%"></iframe>
+            <iframe id="timemapper2" src="template/timemap/timemapframecomputing.jsp" scrolling ="yes" frameborder="0" style="border: none; position:relative; left:250px; top:40px;" width="80%" height="80%"></iframe>
         </div>
 
         <p>
@@ -398,6 +399,7 @@
     }
 
     var allArticles = [];
+    var allArticlesComputing = [];
 
     <c:forEach items="${articlesForJanuary}" var="article">
     addToAllArticles(allArticles, "${article.date}", ${article.id});
@@ -447,18 +449,66 @@
     addToAllArticles(allArticles, "${article.date}", ${article.id});
     </c:forEach>
 
+    <c:forEach items="${articlesForJanuaryComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForFebruaryComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForMarchComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForAprilComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForMayComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForJuneComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForJulyComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForAugustComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForSeptemberComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForOctoberComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForNovemberComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
+    <c:forEach items="${articlesForDecemberComputing}" var="article">
+    addToAllArticles(allArticlesComputing, "${article.date}", ${article.id});
+    </c:forEach>
+
     allArticles.sort(compare);
+    allArticlesComputing.sort(compare);
 
     var articleIdMapper = {};
+    var articleIdMapperComputing = {};
 
     allArticles.forEach(function(value, index) {
-        var articleWithOrder = {
-            id: value.id,
-            date: value.date,
-            orderNumber: index,
-        };
+        articleIdMapper[value.id] = index;
+    });
 
-        articleIdMapper[value.id] = articleWithOrder;
+    allArticlesComputing.forEach(function(value, index) {
+        articleIdMapperComputing[value.id] = index;
     });
 
     document.getElementById('january').addEventListener('change', getSelection);
@@ -473,6 +523,19 @@
     document.getElementById('october').addEventListener('change', getSelection);
     document.getElementById('november').addEventListener('change', getSelection);
     document.getElementById('december').addEventListener('change', getSelection);
+
+    document.getElementById('januaryComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('februaryComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('marchComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('aprilComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('mayComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('juneComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('julyComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('augustComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('septemberComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('octoberComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('novemberComputing').addEventListener('change', getSelectionComputing);
+    document.getElementById('decemberComputing').addEventListener('change', getSelectionComputing);
 </script>
 
 </body>

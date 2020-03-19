@@ -49,6 +49,16 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>PdfManager</servlet-name>
+        <servlet-class>PdfManager</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PdfManager</servlet-name>
+        <url-pattern>/poll</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>Uploader</servlet-name>
         <servlet-class>Uploader</servlet-class>
     </servlet>
@@ -96,6 +106,16 @@
     <servlet-mapping>
         <servlet-name>Validate</servlet-name>
         <url-pattern>/validate/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DownloadExample</servlet-name>
+        <servlet-class>DownloadExample</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DownloadExample</servlet-name>
+        <url-pattern>/DownloadExample</url-pattern>
     </servlet-mapping>
 
 </web-app>

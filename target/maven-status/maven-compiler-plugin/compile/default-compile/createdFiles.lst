@@ -3,6 +3,7 @@ corpus/CsvReader.class
 Validate.class
 EventSelector.class
 Preview.class
+DownloadExample.class
 corpus/Article.class
 Uploader.class
 JsonFiles.class

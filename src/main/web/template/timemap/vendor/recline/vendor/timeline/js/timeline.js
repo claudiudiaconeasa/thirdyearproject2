@@ -5183,7 +5183,7 @@ if(typeof VMM != 'undefined' && typeof VMM.Slider == 'undefined') {
 			goToSlide(n);
 		};
 
-		window.top.setSlide = this.setSlide;
+		window.setSlide = this.setSlide;
 		
 		/* ON EVENT
 		================================================== */

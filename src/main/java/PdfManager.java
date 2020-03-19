@@ -1,3 +1,6 @@
+import javax.servlet.ServletOutputStream;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -5,8 +8,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Files;
+import java.util.HashMap;
+import java.util.Map;
 
-public class PdfManager
+@WebServlet(name = "PdfManager")
+public class PdfManager extends HttpServlet
 {
     public static void sendCsvRequest(String url, String path, String outputFilePathName, HttpServletRequest request, HttpServletResponse response) throws IOException
     {
@@ -57,6 +63,41 @@ public class PdfManager
 ////            //Downloading the file
 ////            response.getream().write(i);
 //        }
+    }
+
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) new URL("http://165.22.125.196:1337/poll?idname=" + request.getParameter("idname")).openConnection();
+
+        connection.setRequestMethod("GET");
+        connection.setDoOutput(true);
+
+        StringBuilder content;
+
+        try (BufferedReader input = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
+            if (connection.getContentType().equals("application/pdf")) {
+                response.setContentType("application/pdf");
+                response.setContentLength(connection.getContentLength());
+                response.setHeader("Content-Disposition", "attachment; filename=\"calendar.pdf\"");
+
+                InputStream inputStream = connection.getInputStream();
+                OutputStream outputStream = response.getOutputStream();
+
+                byte[] chunk = new byte[1024 * 4];
+                int n = 0;
+                while ((n = inputStream.read(chunk)) != -1) {
+                    outputStream.write(chunk, 0, n);
+                }
+            } else {
+                String line;
+                content = new StringBuilder();
+                while ((line = input.readLine()) != null) {
+                    content.append(line);
+                    content.append(System.lineSeparator());
+                }
+            }
+        } finally {
+            connection.disconnect();
+        }
     }
 
 }

@@ -67,9 +67,11 @@
 <body class="theme-invert">
 <section class="section" id="themes">
     <div class="container">
-        <h2 style ="text-align:center">Generate your own TimeMap based on a .csv file upload</h2>
-        <h3 style ="text-align:center">You should upload TimeMap csv format file, having an event for each particular month</h3>
-        <br>
+        <h2 style ="text-align:center">Generate your own TimeMap</h2>
+        <h3 style ="text-align:center">Use the following format for generation: </h3>
+        <form action ="DownloadExample" style ="position:relative; text-align:center;" method ="post" enctype ="multipart/form-data">
+            <input class ="btn btn-default" type ="submit" value="Download Example" name ="downloadExample" id="downloadExample"/>
+        </form>
         <div class="jumbotron" style="background-color:#007E33; position:relative; top:50px;">
         <div class="card w-90" style ="text-align:center;">
             <div class="card-body">
@@ -77,6 +79,7 @@
                     <input style="position:relative; left:375px;" type="file" name="file" /><br>
                     <input class ="btn btn-default" type ="submit" value="Upload" name ="upload" id="upload"/>
                 </form>
+                <br>
             </div>
         </div>
         </div>
