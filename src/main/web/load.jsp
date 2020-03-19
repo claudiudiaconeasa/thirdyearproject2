@@ -28,7 +28,9 @@
         -webkit-animation: spin 2s linear infinite; /* Safari */
         animation: spin 2s linear infinite;
         border-radius: 50%;
-        border-top: 16px solid #3498db;
+        border-top: 16px solid #000000;
+        margin-left:auto;
+        margin-right:auto;
     }
 
 </style>
