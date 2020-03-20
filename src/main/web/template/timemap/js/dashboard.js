@@ -1,3 +1,6 @@
+/*Source: https://github.com/okfn/timemapper
+*/
+
 jQuery(function($) {
   // handle deletion nicely
   $('.js-delete').on('click', function(e) {

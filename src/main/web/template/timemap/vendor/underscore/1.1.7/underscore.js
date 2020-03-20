@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 //     Underscore.js 1.1.7
 //     (c) 2011 Jeremy Ashkenas, DocumentCloud Inc.
 //     Underscore is freely distributable under the MIT license.

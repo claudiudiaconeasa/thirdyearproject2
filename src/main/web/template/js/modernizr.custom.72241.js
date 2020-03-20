@@ -1,3 +1,7 @@
+/*
+Source: https://www.gettemplate.com/info/magister/
+*/
+
 /* Modernizr 2.7.1 (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-backgroundsize-opacity-rgba-textshadow-shiv-mq-teststyles-testprop-testallprops-prefixes-domprefixes
  */

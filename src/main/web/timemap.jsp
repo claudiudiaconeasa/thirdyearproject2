@@ -5,6 +5,14 @@
   Time: 16:16
   To change this template use File | Settings | File Templates.
 --%>
+
+<%--Sources:
+ https://www.w3schools.com/ ,
+ https://www.gettemplate.com/info/magister/ ,
+ https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
+ https://getbootstrap.com/
+ https://timemapper.okfnlabs.org/--%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.opencsv.CSVReader"%>
 <%@ page import="corpus.Article" %>
@@ -27,10 +35,6 @@
     <link href='https://fonts.googleapis.com/css?family=Wire+One' rel='stylesheet' type='text/css'>
 
     <script>
-        function waiting(){
-          alert("Your calendar will get downloaded in a few moments, please wait")
-        }
-
         function getSelection(selection)
         {
             var firstIframeWindow = document.getElementById("timemapper1").contentWindow;
@@ -68,7 +72,7 @@
             <% CSVReader reader =  CsvReader.getReader("historyCorpus.csv", false); %>
             <% HashMap<Integer, ArrayList<Article>> articles =  CsvReader.getArticlesForForm(reader); %>
 
-            <form name ="selectEvents" method="POST" action ="EventSelector" onsubmit="waiting()">
+            <form name ="selectEvents" method="POST" action ="EventSelector">
              <%--January--%>
                  <% request.setAttribute("articlesForJanuary", articles.get(1)); %>
                  <div class="card card-body">
@@ -204,7 +208,7 @@
 
             <%--Generate--%>
             <div class="card card-body">
-               <input class="btn btn-success" type ="submit" value="Generate" />
+               <input class="btn btn-success" type ="submit" value="Generate calendar" />
             </div>
         </form>
 
@@ -229,7 +233,7 @@
             <% CSVReader readerComputing =  CsvReader.getReader("historyComputing.csv", false); %>
             <% HashMap<Integer, ArrayList<Article>> articlesComputing =  CsvReader.getArticlesForForm(readerComputing); %>
 
-            <form name ="selectEventsComputing" method="POST" action ="EventSelectorComputing" onsubmit="waiting()">
+            <form name ="selectEventsComputing" method="POST" action ="EventSelectorComputing">
                 <%--January--%>
                     <% request.setAttribute("articlesForJanuaryComputing", articlesComputing.get(1)); %>
                 <div class="card card-body">
@@ -365,7 +369,7 @@
 
                     <%--Generate--%>
                     <div class="card card-body">
-                        <input class="btn btn-success" type ="submit"  value="Generate" />
+                        <input class="btn btn-success" type ="submit"  value="Generate calendar" />
                     </div>
             </form>
 

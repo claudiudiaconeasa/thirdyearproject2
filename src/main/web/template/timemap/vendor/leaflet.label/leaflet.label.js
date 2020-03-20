@@ -1,3 +1,6 @@
+/*Source: https://github.com/okfn/timemapper
+*/
+
 /*
  Copyright (c) 2012, Smartrak, Jacob Toye
  Leaflet.label is an open-source JavaScript library for adding labels to markers and paths on leaflet powered maps.

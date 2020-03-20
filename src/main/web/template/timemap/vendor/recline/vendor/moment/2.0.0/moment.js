@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 // moment.js
 // version : 2.0.0
 // author : Tim Wood

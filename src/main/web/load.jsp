@@ -5,6 +5,13 @@
   Time: 20:50
   To change this template use File | Settings | File Templates.
 --%>
+<%--Sources:
+ https://www.w3schools.com/ ,
+ https://www.gettemplate.com/info/magister/ ,
+ https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
+ https://getbootstrap.com/
+ https://www.w3schools.com/howto/howto_css_loader.asp--%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -39,7 +46,7 @@
 <body>
 
 <div style="text-align: center;">
-    <h1>Preparing your calendar, please wait for up to a couple of minutes and the download will start!</h1><br>
+    <h1>Preparing your calendar, please wait for a couple of minutes and the download will start!</h1><br>
     <div class="loading"></div>
 
     <h2 id="status">Status: Currently generating...</h2>
@@ -53,14 +60,16 @@
         clearInterval(inter);
     }
 
-    function poll() {
+    function poll()
+    {
         var urlParams = new URLSearchParams(window.location.search);
         var calendarId = urlParams.get('id');
 
         fetch(window.location.protocol + "//" + window.location.host + "/poll?idname=" + calendarId)
             .then(function(response) {
                 var contentType = response.headers.get('Content-Type');
-                if (contentType == 'application/pdf') {
+                if (contentType == 'application/pdf')
+                {
                     stopPolling();
                     document.getElementById("status").textContent = "Status: PDF generated, currently downloading...";
                     return response.blob();
@@ -68,8 +77,10 @@
                     return;
                 }
             })
-            .then(function(value) {
-                if (value) {
+            .then(function(value)
+            {
+                if (value)
+                {
                     var pdf = window.URL.createObjectURL(value);
                     window.location.assign(pdf);
                 }

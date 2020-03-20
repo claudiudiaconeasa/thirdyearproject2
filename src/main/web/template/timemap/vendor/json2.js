@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 /*
     http://www.JSON.org/json2.js
     2010-11-17

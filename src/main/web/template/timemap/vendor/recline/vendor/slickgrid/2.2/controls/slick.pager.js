@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 (function ($) {
   function SlickGridPager(dataView, grid, $container) {
     var $status;

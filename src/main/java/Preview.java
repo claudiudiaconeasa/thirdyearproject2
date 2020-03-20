@@ -8,6 +8,8 @@ import java.io.IOException;
 
 
 @WebServlet(name="Preview")
+/* Servlet to redirect to the preview page of the TimeLine
+ */
 public class Preview extends HttpServlet
 {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
@@ -18,6 +20,7 @@ public class Preview extends HttpServlet
         request.setAttribute("jsonId", jsonId);
 
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/download.jsp");
+
         dispatcher.forward(request, response);
     }
 }

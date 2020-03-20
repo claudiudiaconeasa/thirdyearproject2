@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 jQuery(function($) {
   var $form = $('.js-connect form')
     , $input = $('.js-connect input[name="url"]')

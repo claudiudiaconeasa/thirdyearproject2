@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 (function ($) {
   /***
    * A sample AJAX data store implementation.

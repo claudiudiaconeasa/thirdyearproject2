@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 //
 // showdown.js -- A javascript port of Markdown.
 //

@@ -9,16 +9,6 @@
     </welcome-file-list>
 
     <servlet>
-        <servlet-name>JohnRylands</servlet-name>
-        <servlet-class>JohnRylands</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>JohnRylands</servlet-name>
-        <url-pattern>/JohnRylands</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>About</servlet-name>
         <servlet-class>About</servlet-class>
     </servlet>

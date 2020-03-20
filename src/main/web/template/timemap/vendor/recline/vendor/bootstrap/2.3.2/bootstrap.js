@@ -1,3 +1,6 @@
+/*Source: https://github.com/okfn/timemapper
+*/
+
 /* ===================================================
  * bootstrap-transition.js v2.3.2
  * http://getbootstrap.com/2.3.2/javascript.html#transitions

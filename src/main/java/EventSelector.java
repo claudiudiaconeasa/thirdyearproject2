@@ -15,13 +15,15 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
+/* Servlet to write the form selections into a new csv file which will be passed
+   to the server in order to generate a pdf
+ */
 @WebServlet(name = "eventSelector")
-//Requests are expected to be made as: multipart/form-data MME type
 public class EventSelector extends HttpServlet {
     private static final String path = "./src/main/web/template/csvFiles/";
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
 
         //Retrieving selection of event on that particular month in the form
         ArrayList<String> selection = new ArrayList<String>();
@@ -72,6 +74,7 @@ public class EventSelector extends HttpServlet {
 
         csvWriter.close();
 
+        //Request to generate the pdf
         PdfManager.sendCsvRequest("http://165.22.125.196:1337/generate","./src/main/web/template/generatedCsv/historyGenerated.csv",
                        "success", request, response);
     }

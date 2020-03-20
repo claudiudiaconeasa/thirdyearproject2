@@ -5,6 +5,12 @@
   Time: 15:39
   To change this template use File | Settings | File Templates.
 --%>
+
+<%--Sources:
+ https://www.w3schools.com/ ,
+ https://www.gettemplate.com/info/magister/
+ https://getbootstrap.com/
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -51,9 +57,6 @@
                     <li>
                         <a href="#themes">Generate</a>
                     </li>
-<%--                    <li>--%>
-<%--                        <a href="#about">Contact</a>--%>
-<%--                    </li>--%>
                 </ul>
             </div>
         </div>
@@ -64,28 +67,12 @@
     <div class ="container">
         <div class="row">
             <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
-<%--                <h1 class="title">Engaging History Tools</h1>--%>
-<%--                <h2 class ="subtitle"> Aimed at all students in order to find out more about History Facts inside their academic institution!</h2>--%>
-<%--                <h3 class="tagline">--%>
-<%--                    Start your journey by learning more about the past your University has been through and all great events in your surrounding City!--%>
-<%--                </h3>--%>
-
-<%--                <div class="card w-90" style ="text-align: center">--%>
-<%--                    <div class="card-body">--%>
-<%--                        <h5 class="card-title">About</h5>--%>
-<%--                        <p class="card-text">Find out what all this project is about in the following section</p>--%>
-<%--                        <form action ="About" method ="post">--%>
-<%--                            <button name="more" value="More" class="btn btn-default">More</button>--%>
-<%--                        </form>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-                <div class="jumbotron" style="background-color:#007E33; position:relative; top:100px;">
+                <div class="jumbotron" style="background-color:#007E33; position:relative; top:50px;">
                     <h1 class="display-4">Engaging History Tools</h1>
-                    <p class="lead">Aimed at all students in order to find out more about History Facts inside their academic institution!</p>
+                    <p class="lead">Aimed at all students in order to find out more about History Facts!</p>
                     <hr class="my-4">
-                    <p>Start your journey by learning more about the past your University has been through and all great events in your surrounding City!</p>
+                    <p>Start your journey by learning more about the past greatest events in computing, what your University has been through and all great events in your surrounding City!</p>
                     <p class="lead">
-<%--                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>--%>
                     <form action ="About" method ="post">
                         <button name="more" value="More" class="btn btn-primary btn-lg"  data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">About</button>
 

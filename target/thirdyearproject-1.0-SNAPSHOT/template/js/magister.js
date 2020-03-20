@@ -1,4 +1,8 @@
-// global. currently active menu item 
+/*
+Source: https://www.gettemplate.com/info/magister/
+*/
+
+// global. currently active menu item
 var current_item = 0;
 
 // few settings

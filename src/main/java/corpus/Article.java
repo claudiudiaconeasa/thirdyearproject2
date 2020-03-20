@@ -1,5 +1,7 @@
 package corpus;
 
+/* POJO to simply extract id,date,title from a csv file containing the corpus */
+
 public class Article {
 
     public String id;

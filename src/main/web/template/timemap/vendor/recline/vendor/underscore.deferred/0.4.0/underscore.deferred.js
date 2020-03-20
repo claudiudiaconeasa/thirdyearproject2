@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 (function(root){
 
   // Let's borrow a couple of things from Underscore that we'll need

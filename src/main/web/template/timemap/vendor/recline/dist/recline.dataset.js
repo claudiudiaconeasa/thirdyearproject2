@@ -1,3 +1,6 @@
+/*Source: https://github.com/okfn/timemapper
+*/
+
 // # Recline Backbone Models
 this.recline = this.recline || {};
 this.recline.Model = this.recline.Model || {};

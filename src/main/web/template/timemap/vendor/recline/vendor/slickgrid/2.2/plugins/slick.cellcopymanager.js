@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 (function ($) {
   // register namespace
   $.extend(true, window, {

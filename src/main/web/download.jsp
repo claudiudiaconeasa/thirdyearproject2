@@ -5,6 +5,11 @@
   Time: 17:48
   To change this template use File | Settings | File Templates.
 --%>
+<%-- Sources: https://www.w3schools.com/
+  https://www.gettemplate.com/info/magister/
+  https://timeline.knightlab.com/
+  https://getbootstrap.com/--%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,7 +17,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
 
-    <title>John Rylands Library</title>
+    <title>TimeLine</title>
+
     <%--BootStrap--%>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="template/css/magister.css">
@@ -24,12 +30,6 @@
     <link rel="stylesheet" href="template/css/mycss.css">
     <%--TimeLine Css--%>
     <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
-
-    <script>
-        function waiting(){
-            alert("Your calendar will get downloaded in a few moments, please wait")
-        }
-    </script>
 
     <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
 
@@ -51,14 +51,14 @@
 <div class ="container">
     <div class="row" style="position:relative; top:400px;">
         <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">
-            <h1 class="title"> Your file has been uploaded</h1>
-            <div id='timeline-embed' style="width: 100%; height: 600px">
-                <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&initial_zoom=2&height=650' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
+            <h1 class="title"  style="position:relative; top:-350px;">Your Timeline has been generated</h1>
+            <div id='timeline-embed' style="position:relative; top:-350px; width: 100%; height: 600px">
+                <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1cWqQBZCkX9GpzFtxCWHoqFXCHg-ylTVUWlnrdYMzKUI&font=Default&lang=en&initial_zoom=2&height=650'  width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe>
             </div>
-            <form action="/Downloader" method="POST" style="text-align:center; position:relative; top:50px;" onsubmit="waiting()">
+            <form action="/Downloader" method="POST" style="text-align:center; position:relative; top:-330px;">
                 <%--Redirecting using that particular json created file upon upload--%>
                 <input type="hidden" value="<% out.print(jsonId); %>" name="jsonId" id="jsonId"/>
-                <input class="btn btn-default" type="submit" value="Download" name="Download" id="download"/>
+                <input class="btn btn-success" type="submit" value="Download Calendar" name="Download" id="download"/>
             </form>
         </div>
     </div>

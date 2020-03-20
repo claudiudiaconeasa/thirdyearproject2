@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 /*
  Leaflet, a JavaScript library for mobile-friendly interactive maps. http://leafletjs.com
  (c) 2010-2013, Vladimir Agafonkin

@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 /**
  * @license
  * (c) 2009-2013 Michael Leibman

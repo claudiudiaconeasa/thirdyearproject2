@@ -8,7 +8,9 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
+/* Servlet to get the generated json file with UUID assigned  after upload in order to pass it
+  to the server to idenity it before download
+    */
 @WebServlet(name = "JsonFiles")
 public class JsonFiles extends HttpServlet
 {
@@ -19,11 +21,13 @@ public class JsonFiles extends HttpServlet
         String path = "./src/main/web/template/generatedTimeLineJson/" + jsonId + ".json";
         String content = new String(Files.readAllBytes(Paths.get(path)), StandardCharsets.UTF_8);
 
-        PrintWriter out = response.getWriter();
+        PrintWriter outWriter = response.getWriter();
+
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        out.print(content);
-        out.flush();
+
+        outWriter.print(content);
+        outWriter.flush();
 
     }
 

@@ -1,3 +1,6 @@
+/*Source: https://github.com/okfn/timemapper
+*/
+
 /* Pretty handling of time axes.
 
 Copyright (c) 2007-2013 IOLA and Ole Laursen.

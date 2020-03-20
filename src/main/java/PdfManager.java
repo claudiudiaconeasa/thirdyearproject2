@@ -1,4 +1,3 @@
-import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -8,12 +7,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Files;
-import java.util.HashMap;
-import java.util.Map;
 
+/* Servlet to send a request to the server and return the pdf
+ */
 @WebServlet(name = "PdfManager")
 public class PdfManager extends HttpServlet
 {
+    //Will redirect to the loader page which is handling a request itself on the frontend
     public static void sendCsvRequest(String url, String path, String outputFilePathName, HttpServletRequest request, HttpServletResponse response) throws IOException
     {
         File file = new File(path);
@@ -45,27 +45,18 @@ public class PdfManager extends HttpServlet
         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
         String inputLine;
         StringBuffer content = new StringBuffer();
-        while ((inputLine = in.readLine()) != null) {
+        while ((inputLine = in.readLine()) != null)
+        {
             content.append(inputLine);
         }
         in.close();
 
         response.sendRedirect("load.jsp?id=" + content.toString());
-//        InputtOutputSStream Instream = ((HttpURLConnection) connection).getInputStream();
-////
-////        // Write csv file
-////        BufferedInputStream bufferInput = new BufferedInputStream(Instream);
-////
-////        response.setContentType("application/octet-stream");
-////        int i;
-////        while ((i = bufferInput.read()) != -1)
-////        {
-////            //Downloading the file
-////            response.getream().write(i);
-//        }
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    //Sending request to the webserver from the loader page in order to start the download
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
+    {
         HttpURLConnection connection = (HttpURLConnection) new URL("http://165.22.125.196:1337/poll?idname=" + request.getParameter("idname")).openConnection();
 
         connection.setRequestMethod("GET");
@@ -73,8 +64,10 @@ public class PdfManager extends HttpServlet
 
         StringBuilder content;
 
-        try (BufferedReader input = new BufferedReader(new InputStreamReader(connection.getInputStream()))) {
-            if (connection.getContentType().equals("application/pdf")) {
+        try (BufferedReader input = new BufferedReader(new InputStreamReader(connection.getInputStream())))
+        {
+            if (connection.getContentType().equals("application/pdf"))
+            {
                 response.setContentType("application/pdf");
                 response.setContentLength(connection.getContentLength());
                 response.setHeader("Content-Disposition", "attachment; filename=\"calendar.pdf\"");
@@ -84,10 +77,14 @@ public class PdfManager extends HttpServlet
 
                 byte[] chunk = new byte[1024 * 4];
                 int n = 0;
-                while ((n = inputStream.read(chunk)) != -1) {
+
+                while ((n = inputStream.read(chunk)) != -1)
+                {
                     outputStream.write(chunk, 0, n);
                 }
-            } else {
+            }
+            else
+            {
                 String line;
                 content = new StringBuilder();
                 while ((line = input.readLine()) != null) {
@@ -95,7 +92,8 @@ public class PdfManager extends HttpServlet
                     content.append(System.lineSeparator());
                 }
             }
-        } finally {
+        } finally
+        {
             connection.disconnect();
         }
     }

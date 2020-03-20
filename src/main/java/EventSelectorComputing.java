@@ -16,8 +16,10 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/* Servlet to write the form selections into a new csv file which will be passed
+   to the server in order to generate a pdf
+ */
 @WebServlet(name = "eventSelectorComputing")
-//Requests are expected to be made as: multipart/form-data MME type
 public class EventSelectorComputing extends HttpServlet {
     private static final String path = "./src/main/web/template/csvFiles/";
 
@@ -72,6 +74,7 @@ public class EventSelectorComputing extends HttpServlet {
 
         csvWriter.close();
 
+        //Request to generate the pdf
         PdfManager.sendCsvRequest("http://165.22.125.196:1337/generate","./src/main/web/template/generatedCsv/historyGeneratedComputing.csv",
                 "success", request, response);
     }

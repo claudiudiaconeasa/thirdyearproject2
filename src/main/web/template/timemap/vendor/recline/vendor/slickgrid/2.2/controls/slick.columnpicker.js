@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 (function ($) {
   function SlickColumnPicker(columns, grid, options) {
     var $menu;

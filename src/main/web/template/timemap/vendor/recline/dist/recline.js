@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 this.recline = this.recline || {};
 this.recline.Backend = this.recline.Backend || {};
 this.recline.Backend.DataProxy = this.recline.Backend.DataProxy || {};

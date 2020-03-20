@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 /***
  * Contains basic SlickGrid editors.
  * @module Editors

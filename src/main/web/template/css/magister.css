@@ -1,3 +1,6 @@
+/*
+Source: https://www.gettemplate.com/info/magister/
+*/
 html {
 	/*background:#505D6E url(../images/university.jpg) no-repeat center center fixed;*/
 	/*min-height:100%;*/
@@ -100,8 +103,6 @@ body {
 	padding:10px 8px 10px 12px;
 }
 
-
-
 /********************************************************/
 /*             Sections - universal classes             */
 /********************************************************/
@@ -124,7 +125,6 @@ body {
 #head { 
 	display: block;
 }
-
 
 /********************************************************/
 /*                      Typography                      */
@@ -164,7 +164,6 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
 		font-size:1.3em;
 	}
 }
-
 
 /********************************************************/
 /*                   UI - Buttons                       */
@@ -222,8 +221,6 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
 	color: inherit;
 }
 
-
-
 /********************************************************/
 /*                 Everything else                      */
 /********************************************************/
@@ -245,35 +242,6 @@ a:hover, a:active { color:#fff; text-decoration: underline; }
 	width:340px; 
 	margin:0 auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /***********************************************************/
 /*                   Theme: text shadows                   */

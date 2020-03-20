@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 // Underscore.js 1.4.4
 // ===================
 

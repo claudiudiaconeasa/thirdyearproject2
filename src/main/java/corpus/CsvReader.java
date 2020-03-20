@@ -11,28 +11,42 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
+/* Data is read from a CSV file in order to extract the exact information to be placed into a form*/
+
 public class CsvReader
 {
     private static final String csvPath = "./src/main/web/template/csvFiles/";
     private static final String uploadedCsvPath = "./src/main/web/template/uploadedTimeLineCsv/";
 
-    public static CSVReader getReader(String fileName, boolean uploaded) throws IOException {
+    //Reading from our TimeMap formated CSV file
+    public static CSVReader getReader(String fileName, boolean uploaded) throws IOException
+    {
         String filePath;
 
-        if(uploaded) {
+        //Check to see if the path is for our pre-existing examples or we're going to use the user's uploaded format in order to generate their own TimeLine
+        if(uploaded)
+        {
             filePath = uploadedCsvPath + fileName;
         } else {
             filePath = csvPath + fileName;
         }
 
-        //Reading from the history.csv TimeMap
+        //Reading from the CSV file itself
         Reader reader = Files.newBufferedReader(Paths.get(filePath));
         CSVReader csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build();
 
         return csvReader;
     }
 
-    public static HashMap<Integer, ArrayList<Article>> getArticlesForForm(CSVReader csvReader) throws IOException {
+
+    /* Extracting all the articles based on id,date,title so that we can write them into a new csv based on the selections in the form
+    * Each key stands for a particular month in one year
+    * HashMap would contain ArrayLists of these events, indexed by the key which knows the month of each List itelf
+    */
+
+
+    public static HashMap<Integer, ArrayList<Article>> getArticlesForForm(CSVReader csvReader) throws IOException
+    {
         // The keys of the HashMap will be integers from 1 to 12, representing the number of each month
         HashMap<Integer, ArrayList<Article>> articles = new HashMap<Integer, ArrayList<Article>>();
 

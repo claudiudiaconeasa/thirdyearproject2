@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 /*!
 	TimelineJS
 	Version 2.17

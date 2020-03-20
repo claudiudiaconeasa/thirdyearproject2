@@ -15,8 +15,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.UUID;
 
+//Servlet to assign UUIDs to the generated json files and uploaded csv files
 @WebServlet(name = "Uploader")
-//Requests are expected to be made as: multipart/form-data MME type
 @MultipartConfig
 public class Uploader extends HttpServlet
 {
@@ -26,15 +26,6 @@ public class Uploader extends HttpServlet
         String randomId = id.toString() + ".csv";
 
         return randomId;
-    }
-
-    public String generateJsonId()
-    {
-        String csvId = generateCsvId();
-
-        String jsonId = csvId.substring(0, csvId.length() - 4) + ".json";
-
-        return jsonId;
     }
 
     //Retrieves the destination and filepart
@@ -55,6 +46,7 @@ public class Uploader extends HttpServlet
         //Validating extension of passed file
         if (!fileType.equals("text/csv"))
         { response.sendRedirect("/validate/"); }
+
         else
         {
             final PrintWriter writer = response.getWriter();
@@ -83,6 +75,7 @@ public class Uploader extends HttpServlet
         }
     }
 
+    //Manually converting our csv file to json using a HashMap
     public void csvToJson(String fileCsv, String fileJson) throws IOException
     {
 
@@ -108,10 +101,6 @@ public class Uploader extends HttpServlet
 
             HashMap<String, String> media = new HashMap<>();
             media.put("url", record[5]);
-//            media.put("thumbnail", record[6]);
-            //            media.put("link", record[6]);
-            //            media.put("link_target", record[6]);
-            //            media.put("thumbnail", record[6]);
 
             event.put("start_date", startDate);
             event.put("text", text);

@@ -1,3 +1,5 @@
+/*Source: https://github.com/okfn/timemapper
+*/
 /***
  * Contains core SlickGrid classes.
  * @module Core

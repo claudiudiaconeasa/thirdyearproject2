@@ -5,6 +5,13 @@
   Time: 15:37
   To change this template use File | Settings | File Templates.
 --%>
+
+<%--Sources:
+ https://www.w3schools.com/ ,
+ https://www.gettemplate.com/info/magister/ ,
+ https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
+ https://getbootstrap.com/--%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -26,48 +33,12 @@
     <%--My css--%>
     <link rel ="stylesheet" href="template/css/mycss.css">
 
-<%--    <script>--%>
-<%--        var fileExtension = [".csv"];--%>
-
-<%--        function Validate(formInput)--%>
-<%--        {--%>
-<%--            var input = formInput.getElementsByTagName("input");--%>
-<%--            var i = 0;--%>
-<%--            // for (var i = 0; i < input.length; i++)--%>
-<%--            while(i < input.length)--%>
-<%--            {--%>
-<%--                if (input[i].type == "file")--%>
-<%--                {--%>
-<%--                    var name = input[i].value;--%>
-
-<%--                    if (name.length > 0)--%>
-<%--                    {--%>
-<%--                        var flag = false;--%>
-<%--                        var k = 0;--%>
-<%--                        while (k < fileExtension.length)--%>
-<%--                        {--%>
-<%--                            var extension = fileExtension[k];--%>
-<%--                            if (extension.toLowerCase() == name.substr(name.length - extension.length, extension.length).toLowerCase())--%>
-<%--                            {flag = true;}--%>
-<%--                            k++;--%>
-<%--                        }--%>
-<%--                        if (!flag) { alert("The allowed extension is only .csv");--%>
-<%--                            return false;--%>
-<%--                        }--%>
-<%--                    }--%>
-<%--                }--%>
-<%--                i++;--%>
-<%--            }--%>
-<%--            return true;--%>
-<%--        }--%>
-<%--    </script>--%>
-
 </head>
 
 <body class="theme-invert">
 <section class="section" id="themes">
     <div class="container">
-        <h2 style ="text-align:center">Generate your own TimeMap with at least 12 events, 1 for each month</h2>
+        <h2 style ="text-align:center">Generate your own Timeline with at least 12 events, 1 for each month</h2>
         <h3 style ="text-align:center">Use the following format for generation: </h3>
         <form action ="DownloadExample" style ="position:relative; text-align:center;" method ="post" enctype ="multipart/form-data">
             <input class ="btn btn-default" type ="submit" value="Download Example" name ="downloadExample" id="downloadExample"/>
