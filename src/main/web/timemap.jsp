@@ -208,7 +208,7 @@
 
             <%--Generate--%>
             <div class="card card-body">
-               <input class="btn btn-success" name="generateHistory" type ="submit" value="Generate calendar" />
+               <input class="btn btn-success" id="generateHistory" type ="submit" value="Generate calendar" />
             </div>
         </form>
 
@@ -369,7 +369,7 @@
 
                     <%--Generate--%>
                     <div class="card card-body">
-                        <input class="btn btn-success" name="generateComputing" type ="submit"  value="Generate calendar" />
+                        <input class="btn btn-success" id="generateComputing" type ="submit"  value="Generate calendar" />
                     </div>
             </form>
 
