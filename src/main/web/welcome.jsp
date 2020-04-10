@@ -85,7 +85,7 @@
                     <p>Start your journey by learning more about the past greatest events in computing, what your University has been through and all great events in your surrounding City!</p>
                     <p class="lead">
                     <form action ="About" method ="post">
-                        <button name="more" value="More" class="btn btn-primary btn-lg"  data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">About</button>
+                        <button name="more" id="about" value="More" class="btn btn-primary btn-lg"  data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">About</button>
 
                     </form>
                     </p>
