@@ -11,9 +11,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
+import java.lang.reflect.Array;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 /* Servlet to write the form selections into a new csv file which will be passed
    to the server in order to generate a pdf
@@ -57,7 +59,9 @@ public class EventSelector extends HttpServlet {
         for (int i = 0; i < selection.size(); i++)
         {
             Integer rowNumber = Integer.parseInt(selection.get(i));
-            selectedRecords.add(records.get(rowNumber));
+            String[] record = records.get(rowNumber);
+            String[] recordWithEventId = new String[]{record[0], record[1], record[2], record[3], record[4], record[5], record[6], Integer.toString(rowNumber)};
+            selectedRecords.add(recordWithEventId);
         }
 
         //Writing to a new csvFile, only the events from the form selections
@@ -65,7 +69,7 @@ public class EventSelector extends HttpServlet {
         FileWriter outputfile = new FileWriter(file);
         CSVWriter csvWriter = new CSVWriter(outputfile);
 
-        String[] columnNames = {"Title", "Date", "Description", "Place", "Location", "Media", "Source URL"};
+        String[] columnNames = {"Title", "Date", "Description", "Place", "Location", "Media", "Source URL", "EventId"};
         //Writes the first row without quotations (header) to match the .py script format
         csvWriter.writeNext(columnNames,false);
 

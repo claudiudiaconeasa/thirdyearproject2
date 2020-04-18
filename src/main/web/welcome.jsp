@@ -602,6 +602,32 @@
     document.getElementById('octoberComputing').addEventListener('change', getSelectionComputing);
     document.getElementById('novemberComputing').addEventListener('change', getSelectionComputing);
     document.getElementById('decemberComputing').addEventListener('change', getSelectionComputing);
+
+    var urlParams = new URLSearchParams(window.location.search);
+    var calendarId = urlParams.get('calendar_id');
+    var eventId = urlParams.get('event_id');
+
+    var initialSelection = {
+        target: {
+            value: eventId,
+        }
+    }
+
+    if (calendarId == '1') {
+        var firstIframeWindow = document.getElementById("timemapper1").contentWindow;
+        scrollToInitialSelection(firstIframeWindow, getSelection, initialSelection);
+    } else if (calendarId == '2') {
+        var secondIframeWindow = document.getElementById("timemapper2").contentWindow;
+        scrollToInitialSelection(secondIframeWindow, getSelectionComputing, initialSelection);
+    }
+
+    function scrollToInitialSelection(iframeWindow, selectionFunction, initialSelection) {
+        if (!iframeWindow.goToEvent) {
+            setTimeout(scrollToInitialSelection, 1000, iframeWindow, selectionFunction, initialSelection);
+        } else {
+            selectionFunction(initialSelection);
+        }
+    }
 </script>
 
 
