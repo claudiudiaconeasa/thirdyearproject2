@@ -60,7 +60,7 @@ public class EventSelector extends HttpServlet {
         {
             Integer rowNumber = Integer.parseInt(selection.get(i));
             String[] record = records.get(rowNumber);
-            String[] recordWithEventId = new String[]{record[0], record[1], record[2], record[3], record[4], record[5], record[6], Integer.toString(rowNumber)};
+            String[] recordWithEventId = new String[]{record[0], record[1], record[2], record[3], record[4], record[5], record[6], Integer.toString(rowNumber), "1"};
             selectedRecords.add(recordWithEventId);
         }
 
@@ -69,7 +69,7 @@ public class EventSelector extends HttpServlet {
         FileWriter outputfile = new FileWriter(file);
         CSVWriter csvWriter = new CSVWriter(outputfile);
 
-        String[] columnNames = {"Title", "Date", "Description", "Place", "Location", "Media", "Source URL", "EventId"};
+        String[] columnNames = {"Title", "Date", "Description", "Place", "Location", "Media", "Source URL", "EventId", "CalendarId"};
         //Writes the first row without quotations (header) to match the .py script format
         csvWriter.writeNext(columnNames,false);
 

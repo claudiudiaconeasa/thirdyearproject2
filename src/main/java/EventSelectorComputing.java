@@ -57,7 +57,9 @@ public class EventSelectorComputing extends HttpServlet {
         for (int i = 0; i < selection.size(); i++)
         {
             Integer rowNumber = Integer.parseInt(selection.get(i));
-            selectedRecords.add(records.get(rowNumber));
+            String[] record = records.get(rowNumber);
+            String[] recordWithEventId = new String[]{record[0], record[1], record[2], record[3], record[4], record[5], record[6], Integer.toString(rowNumber), "2"};
+            selectedRecords.add(recordWithEventId);
         }
 
         //Writing to a new csvFile, only the events from the form selections
@@ -65,7 +67,7 @@ public class EventSelectorComputing extends HttpServlet {
         FileWriter outputfile = new FileWriter(file);
         CSVWriter csvWriter = new CSVWriter(outputfile);
 
-        String[] columnNames = {"Title", "Date", "Description", "Place", "Location", "Media", "Source URL"};
+        String[] columnNames = {"Title", "Date", "Description", "Place", "Location", "Media", "Source URL", "EventId", "CalendarId"};
         //Writes the first row without quotations (header) to match the .py script format
         csvWriter.writeNext(columnNames,false);
 
