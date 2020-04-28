@@ -44,11 +44,11 @@ public class Uploader extends HttpServlet
         String fileType = filePart.getContentType();
 
         //Validating extension of passed file
-        if (!fileType.equals("text/csv"))
-        { response.sendRedirect("/validate/"); }
+//        if (!fileType.equals("text/csv"))
+//        { response.sendRedirect("/validate/"); }
 
-        else
-        {
+//        else
+//        {
             final PrintWriter writer = response.getWriter();
 
             final String path = "./src/main/web/template/uploadedTimeLineCsv";
@@ -72,7 +72,7 @@ public class Uploader extends HttpServlet
 
             //Going to the download button
             response.sendRedirect("/preview/" + id);
-        }
+//        }
     }
 
     //Manually converting our csv file to json using a HashMap
