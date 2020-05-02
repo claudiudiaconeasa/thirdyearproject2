@@ -1,0 +1,12 @@
+Engaging History Tools application to render TimeLines and download customised calendars based on TimeMap events
+The application is deployed at: http://historytools.herokuapp.com/
+
+How to run the application in IntelliJ IDE:
+
+Clone repository and add maven configuration: clean install heroku:run-war
+
+How to run Selenium test cases:
+
+Mark the directory "test"  inside :src/test" as "Test Source Root"
+Open Module Settings of the project and add the JAR dependencies inside "selenium-java-3.141.59" folder and selenium-java-3.141.59/libs"
+Run each test case separately
