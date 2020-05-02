@@ -4,6 +4,7 @@ The application is deployed at: http://historytools.herokuapp.com/
 How to run the application in IntelliJ IDE:
 
 Clone repository and add maven configuration: clean install heroku:run-war
+Open port localhost:8080 in browser
 
 How to run Selenium test cases:
 
