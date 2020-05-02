@@ -97,24 +97,6 @@
 
 <%--Main description on HomePage - Home section--%>
 <section class ="section" id="head">
-<%--    <div class ="container">--%>
-<%--        <div class="row">--%>
-<%--            <div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1 text-center">--%>
-<%--                <div class="jumbotron" style="background-color:#007E33; position:relative; top:50px;">--%>
-<%--                    <h1 class="display-4">Engaging History Tools</h1>--%>
-<%--                    <p class="lead">Aimed at all students in order to find out more about History Facts!</p>--%>
-<%--                    <hr class="my-4">--%>
-<%--                    <p>Start your journey by learning more about the past greatest events in computing, what your University has been through and all great events in your surrounding City!</p>--%>
-<%--                    <p class="lead">--%>
-<%--                    <form action ="About" method ="post">--%>
-<%--                        <button name="more" id="about" value="More" class="btn btn-primary btn-lg"  data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">About</button>--%>
-
-<%--                    </form>--%>
-<%--                    </p>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
-<%--    </div>--%>
     <div class="container">
 
         <h2 class="text-center title" style="position:relative; left: 135px;">Chronology of Events</h2>
